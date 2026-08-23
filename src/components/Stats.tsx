@@ -2,7 +2,7 @@
 
 const stats = [
   { value: "200+", label: "Projects Delivered" },
-  { value: "8+", label: "Years Experience" },
+  { value: "12+", label: "Years Experience" },
   { value: "4.8★", label: "Client Rating" },
   { value: "150%", label: "Avg. Traffic Growth" },
   { value: "50+", label: "Active Clients" },
@@ -11,7 +11,16 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="relative py-16 bg-primary overflow-hidden" aria-label="Key statistics">
+    <section className="relative py-16 overflow-hidden" aria-label="Key statistics">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=75"
+          alt="Digital marketing analytics results"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/90" />
+      </div>
       <div className="absolute inset-0 opacity-10 grid-pattern" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">

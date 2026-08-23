@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: "https://www.digitalmarketing.sanctify.in",
     logo: "https://www.digitalmarketing.sanctify.in/images/logo.png",
     image: "https://www.digitalmarketing.sanctify.in/images/og-image.jpg",
-    description: "Best digital marketing agency in Goa offering SEO, social media marketing, Google Ads, web design and AI-powered growth strategies since 2016.",
+    description: "Best digital marketing agency in Goa offering SEO, social media marketing, Google Ads, web design and AI-powered growth strategies since 2012.",
     telephone: "+919923352923",
     email: "help@sanctify.in",
     foundingDate: "2012",
@@ -91,6 +91,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="canonical" href="https://www.digitalmarketing.sanctify.in" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

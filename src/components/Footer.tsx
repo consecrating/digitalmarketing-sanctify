@@ -16,9 +16,9 @@ export function Footer() {
               <span className="text-white font-bold">Sanctify</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-4">
-              Goa&apos;s trusted digital marketing agency. SEO, Social Media, Google Ads, Web Design &amp; AI Marketing — helping businesses grow since 2016.
+              Goa&apos;s trusted digital marketing agency. SEO, Social Media, Google Ads, Web Design &amp; AI Marketing — helping businesses grow since 2012.
             </p>
-            <p className="text-white/30 text-xs">GSTIN: Registered | Est. 2016</p>
+            <p className="text-white/30 text-xs">GSTIN: Registered | Est. 2012</p>
           </div>
 
           {/* Services */}
@@ -26,7 +26,16 @@ export function Footer() {
             <h4 className="text-white font-bold text-sm mb-4 uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {["Search Engine Optimization", "Social Media Marketing", "Google Ads & PPC", "Web Design & Development", "Content Marketing", "AI-Powered Marketing", "Local SEO for Goa", "Email Marketing"].map(s => (
-                <li key={s}><a href="#services" className="text-white/50 hover:text-primary-light text-sm transition-colors">{s}</a></li>
+                <li key={s}><a href={
+                  s === "Search Engine Optimization" ? "/seo-services/" :
+                  s === "Social Media Marketing" ? "/social-media-marketing/" :
+                  s === "Google Ads & PPC" ? "/google-ads/" :
+                  s === "Web Design & Development" ? "/web-design/" :
+                  s === "Content Marketing" ? "/content-marketing/" :
+                  s === "AI-Powered Marketing" ? "/ai-marketing/" :
+                  s === "Local SEO for Goa" ? "/seo-services-in-panaji/" :
+                  "/email-marketing/"
+                } className="text-white/50 hover:text-primary-light text-sm transition-colors">{s}</a></li>
               ))}
             </ul>
           </div>
@@ -68,7 +77,7 @@ export function Footer() {
           <p className="text-white/30 text-xs text-center md:text-left">
             © {new Date().getFullYear()} Sanctify — Digital Marketing Agency in Goa. All rights reserved.
           </p>
-          <a href="#home" className="flex items-center gap-1.5 text-white/30 hover:text-primary-light text-xs transition-colors">Back to top <ArrowUp size={12} /></a>
+          <a href="/" className="flex items-center gap-1.5 text-white/30 hover:text-primary-light text-xs transition-colors">Back to top <ArrowUp size={12} /></a>
         </div>
       </div>
     </footer>

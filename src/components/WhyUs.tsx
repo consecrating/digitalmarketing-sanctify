@@ -2,7 +2,7 @@
 import { Award, TrendingUp, Users, Zap, MapPin, ShieldCheck } from "lucide-react";
 
 const reasons = [
-  { icon: Award, title: "8+ Years in Digital Marketing", desc: "Since 2016, we've been helping Goa businesses grow online with proven digital strategies." },
+  { icon: Award, title: "12+ Years in Digital Marketing", desc: "Since 2012, we've been helping Goa businesses grow online with proven digital strategies." },
   { icon: TrendingUp, title: "Data-Driven Results", desc: "Every campaign is backed by analytics. We track ROI, conversions, and growth metrics religiously." },
   { icon: Users, title: "200+ Happy Clients", desc: "From startups to established brands across Goa — hotels, restaurants, real estate, and more." },
   { icon: Zap, title: "AI-First Approach", desc: "We leverage AI tools for content creation, ad optimization, and predictive analytics — staying ahead of the curve." },
@@ -17,6 +17,19 @@ export function WhyUs() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
           <div>
+            {/* Team image */}
+            <div className="relative mb-8 rounded-2xl overflow-hidden shadow-premium">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80"
+                alt="Sanctify digital marketing team collaborating in Goa office"
+                className="w-full h-[280px] md:h-[320px] object-cover"
+              />
+              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
+                <p className="text-dark font-bold text-sm">12+ Years of Excellence</p>
+                <p className="text-gray text-xs">Award-winning agency since 2012</p>
+              </div>
+            </div>
+
             <div className="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full mb-6">
               <div className="w-2 h-2 rounded-full bg-primary" />
               <span className="text-primary text-sm font-semibold">Why Businesses in Goa Choose Sanctify</span>
@@ -30,7 +43,7 @@ export function WhyUs() {
             <p className="mt-4 text-gray text-base leading-relaxed">
               As a full-service <strong className="text-dark">digital marketing agency in Goa</strong>, we handle everything from SEO and social media to paid ads and AI-powered marketing — so you can focus on running your business while we focus on growing it.
             </p>
-            <a href="#contact" className="mt-8 inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-primary">
+            <a href="/contact/" className="mt-8 inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-primary">
               Start Growing Today
             </a>
           </div>

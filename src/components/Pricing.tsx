@@ -91,7 +91,7 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`block text-center py-3.5 rounded-xl font-bold text-sm transition-all ${plan.popular ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:bg-primary-dark shadow-primary"}`}>
+              <a href="/contact/" className={`block text-center py-3.5 rounded-xl font-bold text-sm transition-all ${plan.popular ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:bg-primary-dark shadow-primary"}`}>
                 Get Started
               </a>
             </div>
@@ -100,7 +100,7 @@ export function Pricing() {
 
         <p className="text-center text-gray text-sm mt-8">
           All prices are exclusive of GST. Custom packages available for specific requirements.{" "}
-          <a href="#contact" className="text-primary font-semibold underline">Contact us</a> for a tailored quote.
+          <a href="/contact/" className="text-primary font-semibold underline">Contact us</a> for a tailored quote.
         </p>
       </div>
     </section>

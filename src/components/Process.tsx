@@ -26,7 +26,17 @@ export function Process() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, i) => (
-            <div key={i} className="bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.15] rounded-2xl p-6 transition-all duration-300">
+            <div key={i} className="bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.15] rounded-2xl p-6 transition-all duration-300 relative overflow-hidden">
+              <img
+                src={
+                  i === 0 ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=75" :
+                  i === 1 ? "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&q=75" :
+                  i === 2 ? "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=75" :
+                  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=75"
+                }
+                alt={s.title}
+                className="w-full h-32 object-cover rounded-xl mb-4 opacity-60"
+              />
               <span className="text-primary-light font-black text-3xl">{s.num}</span>
               <h3 className="text-white font-bold text-base mt-3 mb-2">{s.title}</h3>
               <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
