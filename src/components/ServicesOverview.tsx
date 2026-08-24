@@ -1,48 +1,123 @@
-"use client";
-import { Search, Share2, Layout, MousePointerClick, PenTool, Brain, Mail, Palette, Video, Shield, ArrowRight } from "lucide-react";
+import { Search, Share2, Layout, MousePointerClick, PenTool, Brain, Mail, Palette, Video, Shield, ArrowUpRight } from "lucide-react";
 
-const services = [
-  { icon: Search, title: "SEO Services", href: "/seo-services/", desc: "Dominate Google rankings with technical SEO, local SEO, and AI-ready optimization.", color: "bg-primary-50 text-primary" },
-  { icon: Share2, title: "Social Media Marketing", href: "/social-media-marketing/", desc: "Strategic management of Facebook, Instagram, LinkedIn & YouTube for brand growth.", color: "bg-secondary-50 text-secondary-dark" },
-  { icon: Layout, title: "Web Design", href: "/web-design/", desc: "Stunning, fast-loading, conversion-optimized websites built for results.", color: "bg-accent/10 text-accent-dark" },
-  { icon: MousePointerClick, title: "Google Ads", href: "/google-ads/", desc: "Maximize ROI with expert PPC campaigns — Search, Display & YouTube ads.", color: "bg-primary-50 text-primary" },
-  { icon: PenTool, title: "Content Marketing", href: "/content-marketing/", desc: "Authority-building content that ranks on Google and converts readers to customers.", color: "bg-secondary-50 text-secondary-dark" },
-  { icon: Brain, title: "AI Marketing", href: "/ai-marketing/", desc: "Get cited by ChatGPT, Gemini & Perplexity with GEO/AEO optimization.", color: "bg-accent/10 text-accent-dark" },
-  { icon: Mail, title: "Email Marketing", href: "/email-marketing/", desc: "Automated email campaigns for nurturing leads and driving repeat business.", color: "bg-primary-50 text-primary" },
-  { icon: Palette, title: "Graphic Design", href: "/graphic-design/", desc: "Professional branding, social creatives, packaging & visual communication.", color: "bg-secondary-50 text-secondary-dark" },
-  { icon: Video, title: "Video Marketing", href: "/video-marketing/", desc: "Engaging video content — reels, ads, corporate videos & YouTube strategy.", color: "bg-accent/10 text-accent-dark" },
-  { icon: Shield, title: "Reputation Management", href: "/reputation-management/", desc: "Protect and enhance your online reputation with review & brand management.", color: "bg-primary-50 text-primary" },
+const featured = [
+  {
+    icon: Search,
+    title: "Search Engine Optimisation",
+    href: "/seo-services/",
+    blurb: "Technical audits, local pack domination, and topical authority that compounds month after month.",
+    points: ["Technical SEO & Core Web Vitals", "Google Business Profile", "Link acquisition"],
+  },
+  {
+    icon: Brain,
+    title: "AI Search Visibility",
+    href: "/ai-marketing/",
+    blurb: "Be the brand that ChatGPT, Gemini and Perplexity recommend when buyers ask.",
+    points: ["GEO — generative engines", "AEO — answer engines", "LLMO — model recall"],
+  },
+];
+
+const rest = [
+  { icon: Share2, title: "Social Media", href: "/social-media-marketing/", blurb: "Content, community and paid social that builds real audiences." },
+  { icon: Layout, title: "Web Design", href: "/web-design/", blurb: "Fast, accessible sites engineered to convert." },
+  { icon: MousePointerClick, title: "Google Ads", href: "/google-ads/", blurb: "Search, Performance Max and remarketing tuned for CPL." },
+  { icon: PenTool, title: "Content", href: "/content-marketing/", blurb: "Editorial that earns links and answers buyer questions." },
+  { icon: Mail, title: "Email", href: "/email-marketing/", blurb: "Lifecycle flows that turn one-time buyers into regulars." },
+  { icon: Palette, title: "Brand Design", href: "/graphic-design/", blurb: "Identity systems and creative that hold up everywhere." },
+  { icon: Video, title: "Video", href: "/video-marketing/", blurb: "Short-form and brand film built for the feed." },
+  { icon: Shield, title: "Reputation", href: "/reputation-management/", blurb: "Review velocity and sentiment you actually control." },
 ];
 
 export function ServicesOverview() {
   return (
-    <section id="services" className="relative py-20 md:py-28 bg-white overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary-50/40 rounded-full -translate-y-1/2 blur-3xl" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full mb-4">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-sm font-semibold">Our Digital Marketing Services in Goa</span>
+    <section id="services" className="relative bg-paper py-20 md:py-28 overflow-hidden">
+      <div className="absolute top-0 right-0 w-[520px] h-[520px] rounded-full bg-electric-50 blur-[130px] -translate-y-1/3 translate-x-1/4" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        {/* Header row */}
+        <div className="grid lg:grid-cols-12 gap-6 items-end mb-12">
+          <div className="lg:col-span-7">
+            <p className="type-eyebrow text-electric">What we do</p>
+            <h2 className="mt-3 type-display text-ink">
+              Ten disciplines.
+              <br />
+              <span className="type-accent-italic text-slate">One growth engine.</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-dark">
-            10 Services to <span className="text-primary">Grow Your Business</span>
-          </h2>
-          <p className="mt-4 text-gray text-base md:text-lg leading-relaxed">
-            Full-spectrum digital marketing solutions — from SEO to AI. Everything your Goa business needs to dominate online.
-          </p>
+          <div className="lg:col-span-5 lg:text-right">
+            <p className="text-slate text-base leading-relaxed lg:ml-auto max-w-sm">
+              No fragmented handoffs. One in-house team owns strategy, creative,
+              build and performance — so every channel pulls in the same direction.
+            </p>
+          </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-          {services.map((s, i) => (
-            <a key={i} href={s.href} className="group bg-white border border-gray-100 hover:border-primary/20 rounded-xl p-5 transition-all duration-300 hover-lift block">
-              <div className={`w-11 h-11 rounded-lg ${s.color.split(' ')[0]} flex items-center justify-center mb-3`}>
-                <s.icon size={20} className={s.color.split(' ')[1]} />
+        {/* Featured pair — large bento cards */}
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          {featured.map((s, i) => (
+            <a
+              key={s.href}
+              href={s.href}
+              className={`group relative rounded-3xl p-7 md:p-9 overflow-hidden lift ${
+                i === 0 ? "bg-ink text-white grain" : "mesh-sand edge-soft text-ink"
+              }`}
+            >
+              {i === 0 && <div className="absolute inset-0 field-dots-light opacity-60" />}
+              <div className="relative z-10">
+                <div className="flex items-start justify-between gap-4">
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
+                      i === 0 ? "bg-acid text-ink" : "bg-ink text-acid"
+                    }`}
+                  >
+                    <s.icon size={22} />
+                  </div>
+                  <ArrowUpRight
+                    size={22}
+                    className={`shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 ${
+                      i === 0 ? "text-acid" : "text-electric"
+                    }`}
+                  />
+                </div>
+
+                <h3 className="mt-6 type-heading">{s.title}</h3>
+                <p className={`mt-3 text-sm md:text-base leading-relaxed max-w-md ${i === 0 ? "text-white/55" : "text-slate"}`}>
+                  {s.blurb}
+                </p>
+
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {s.points.map((p) => (
+                    <li
+                      key={p}
+                      className={`text-xs font-medium px-3 py-1.5 rounded-full ${
+                        i === 0 ? "bg-white/[0.07] text-white/65 border border-white/10" : "bg-white text-ink/70 edge-soft"
+                      }`}
+                    >
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-dark font-bold text-sm mb-1 group-hover:text-primary transition-colors">{s.title}</h3>
-              <p className="text-gray text-xs leading-relaxed">{s.desc}</p>
-              <span className="mt-3 inline-flex items-center gap-1 text-primary text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more <ArrowRight size={12} />
-              </span>
+            </a>
+          ))}
+        </div>
+
+        {/* Remaining eight — compact bento */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {rest.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              className="group relative bg-white edge-soft rounded-2xl p-6 lift hover:border-ink/20"
+            >
+              <div className="w-10 h-10 rounded-lg bg-electric-50 text-electric flex items-center justify-center mb-4 transition-colors group-hover:bg-electric group-hover:text-white">
+                <s.icon size={18} />
+              </div>
+              <h3 className="font-bold text-ink text-[0.9375rem] leading-snug flex items-start gap-1.5">
+                {s.title}
+                <ArrowUpRight size={13} className="mt-0.5 shrink-0 text-slate-light opacity-0 transition-all group-hover:opacity-100 group-hover:text-electric" />
+              </h3>
+              <p className="mt-2 text-slate text-xs leading-relaxed">{s.blurb}</p>
             </a>
           ))}
         </div>

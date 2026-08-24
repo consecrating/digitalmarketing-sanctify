@@ -1,50 +1,43 @@
-"use client";
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
-
 const faqs = [
   {
     q: "What makes Sanctify the best digital marketing agency in Goa?",
-    a: "Sanctify combines 8+ years of experience, deep Goa-local market expertise, AI-powered tools, and a data-driven approach. We've served 200+ clients across Panaji, Margao, Mapusa, Vasco, and Calangute with proven results in SEO, social media, and paid advertising."
+    a: "Three things: twelve years operating in this specific market, a fully in-house team across every discipline, and reporting tied to revenue rather than impressions. We have shipped 200+ projects for businesses in Panaji, Margao, Mapusa, Vasco and Calangute since 2012.",
   },
   {
     q: "How much does digital marketing cost in Goa?",
-    a: "Our digital marketing packages start from ₹15,000/month for basic social media management. Most growing businesses invest ₹30,000-60,000/month for comprehensive SEO + social media + paid ads. We offer free consultations to recommend the best package for your budget and goals."
+    a: "Retainers start at ₹15,000 per month for focused social media management. Most growing businesses invest ₹30,000–₹60,000 monthly for combined SEO, social and paid media. Websites start at ₹25,000 as a one-time build. Every engagement begins with a free audit so scope is agreed before spend.",
   },
   {
-    q: "How long does SEO take to show results in Goa?",
-    a: "For local SEO in Goa, you can expect to see improvements in 3-4 months, with significant ranking gains in 6-8 months. Competitive keywords like 'hotels in Goa' may take longer. We provide monthly progress reports so you can track every improvement."
+    q: "How long does SEO take to show results?",
+    a: "For local SEO in Goa, expect early movement in months three to four and meaningful ranking gains by months six to eight. Competitive national terms take longer. You receive monthly progress reports throughout, so there is no waiting in the dark.",
   },
   {
-    q: "Do you work with businesses outside of Goa?",
-    a: "Yes! While our office is in Zuarinagar, Goa, we serve clients across India and internationally. Our digital marketing strategies are effective regardless of location. We have clients in Karnataka, Maharashtra, and even abroad."
+    q: "What is GEO, AEO and LLMO — and do I need them?",
+    a: "GEO optimises for generative engines like Google AI Overviews. AEO targets direct answers such as featured snippets and voice results. LLMO improves how models like ChatGPT and Gemini recall and recommend your brand. If your buyers research using AI tools, yes — and most Goa businesses have not started, which is the opportunity.",
   },
   {
-    q: "What social media platforms do you manage?",
-    a: "We manage Facebook, Instagram, LinkedIn, YouTube, Twitter/X, and Google Business Profile. For Goa businesses, we typically recommend Facebook and Instagram as primary channels, with LinkedIn for B2B. Our team creates custom content for each platform."
+    q: "Do you work with hotels and restaurants specifically?",
+    a: "Hospitality is our deepest vertical. We handle Google Business Profile optimisation, review velocity, destination keyword strategy, direct-booking funnels and seasonal campaign planning built around Goa's tourist calendar.",
   },
   {
-    q: "Can you help my hotel/restaurant rank higher on Google?",
-    a: "Absolutely! Tourism and hospitality is our specialty in Goa. We optimize Google Business Profile, manage reviews, create SEO-optimized content targeting 'best hotel in [area]' keywords, and run targeted Google Ads and social media campaigns for maximum bookings."
+    q: "Do you require long-term contracts?",
+    a: "No. We work on rolling monthly engagements with a 30-day notice period. Clients stay because the numbers justify it, not because a contract obliges them to.",
   },
   {
-    q: "What is AI marketing and do you offer it?",
-    a: "AI marketing uses artificial intelligence for content creation, predictive analytics, automated ad optimization, and search optimization for AI engines (GEO/AEO). We use AI tools to create content that gets your business cited by ChatGPT, Gemini, and Perplexity alongside traditional Google rankings."
+    q: "Will I get a dedicated point of contact?",
+    a: "Yes. Every account has a named manager who knows your business, plus direct access to the specialists executing the work. No ticket queues, no rotating juniors.",
   },
   {
-    q: "Do you offer website design as part of your digital marketing services?",
-    a: "Yes! We design modern, fast-loading, mobile-responsive websites optimized for conversions and SEO. A well-designed website is the foundation of effective digital marketing. Our web design packages start from ₹25,000 for a complete business website."
+    q: "Do you serve clients outside Goa?",
+    a: "Yes. Our head office is in Zuarinagar, Goa, with contact points in Varanasi and Italy. We currently work with clients across India and internationally.",
   },
 ];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  // FAQ Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map(f => ({
+    mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -52,38 +45,55 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-20 md:py-28 bg-gray-light overflow-hidden">
+    <section id="faq" className="relative mesh-sand py-20 md:py-28 overflow-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full mb-4">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-sm font-semibold">Frequently Asked Questions</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-dark">
-            Questions About <span className="text-primary">Digital Marketing</span> in Goa?
-          </h2>
-          <p className="mt-4 text-gray text-base md:text-lg">Everything you need to know about our digital marketing services</p>
-        </div>
 
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-primary-50/30 transition-colors"
-                aria-expanded={openIndex === i}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-28">
+              <p className="type-eyebrow text-electric">Questions</p>
+              <h2 className="mt-3 type-display text-ink">
+                Straight
+                <br />
+                <span className="type-accent-italic text-slate">answers.</span>
+              </h2>
+              <p className="mt-5 text-slate text-sm leading-relaxed max-w-xs">
+                Still unsure? A 30-minute call costs nothing and usually clarifies
+                more than a proposal.
+              </p>
+              <a
+                href="/contact/"
+                className="mt-6 inline-flex items-center gap-2 bg-ink text-white px-5 py-3 rounded-full font-bold text-sm press shadow-hard-electric"
               >
-                <h3 className="text-dark font-semibold text-sm md:text-base pr-4">{faq.q}</h3>
-                {openIndex === i ? <Minus size={18} className="text-primary shrink-0" /> : <Plus size={18} className="text-gray shrink-0" />}
-              </button>
-              {openIndex === i && (
-                <div className="px-5 pb-5 border-t border-gray-50">
-                  <p className="text-gray text-sm leading-relaxed mt-3">{faq.a}</p>
-                </div>
-              )}
+                Book a call
+              </a>
             </div>
-          ))}
+          </div>
+
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-ink/[0.09] border-y border-ink/[0.09]">
+              {faqs.map((f, i) => (
+                <details key={i} className="group py-5" open={i === 0}>
+                  <summary className="flex items-start justify-between gap-5 cursor-pointer list-none">
+                    <h3 className="font-bold text-ink text-base md:text-lg tracking-tight pr-2">
+                      {f.q}
+                    </h3>
+                    <span
+                      className="relative w-6 h-6 shrink-0 mt-0.5 grid place-items-center rounded-full bg-ink/[0.06] group-hover:bg-acid transition-colors"
+                      aria-hidden="true"
+                    >
+                      <span className="absolute w-2.5 h-[1.5px] bg-ink" />
+                      <span className="absolute w-[1.5px] h-2.5 bg-ink transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" />
+                    </span>
+                  </summary>
+                  <div className="mt-3 pr-10">
+                    <p className="text-slate text-sm md:text-[0.9375rem] leading-relaxed">{f.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

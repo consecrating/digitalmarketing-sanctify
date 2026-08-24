@@ -1,57 +1,93 @@
-"use client";
 import { Star, Quote } from "lucide-react";
 
-const testimonials = [
-  { name: "S. Nizami Interior Decorator", location: "Margao, Goa", text: "SANCTIFY is one of the best Digital Media Marketing Agency in Goa. I advertised my company through them and received excellent response. Highly recommended!" },
-  { name: "Travel LIFE", location: "Chicalim, Goa", text: "One of the best digital marketing service providers in Goa. Guaranteed returns on investment — completely professional and efficient in digital services." },
-  { name: "Hotel Supreme Grande", location: "Calangute, Goa", text: "I recommend SANCTIFY for Web-designing & Digital Media Marketing. They designed a professional hotel website for us that drives direct bookings." },
-  { name: "Praveen Manvi", location: "Belgaum, Karnataka", text: "I joined SANCTIFY as an Intern and recommend them for Digital Media Marketing. They are truly the best at what they do — expert team and proven strategies." },
+const reviews = [
+  {
+    quote: "Sanctify is one of the best digital media marketing agencies in Goa. I advertised my company through them and received an excellent response.",
+    name: "S. Nizami Interior Decorator",
+    place: "Margao, Goa",
+    sector: "Interiors",
+  },
+  {
+    quote: "One of the best digital marketing service providers in Goa. Completely professional and efficient — the returns on investment speak for themselves.",
+    name: "Travel LIFE",
+    place: "Chicalim, Goa",
+    sector: "Travel",
+  },
+  {
+    quote: "I recommend Sanctify for web design and digital media marketing. They built a professional hotel website for us that drives direct bookings.",
+    name: "Hotel Supreme Grande",
+    place: "Calangute, Goa",
+    sector: "Hospitality",
+  },
+  {
+    quote: "I joined Sanctify as an intern and recommend them for digital media marketing. Genuinely expert team with proven strategies.",
+    name: "Praveen Manvi",
+    place: "Belgaum, Karnataka",
+    sector: "Alumni",
+  },
 ];
 
 export function Testimonials() {
-  // JSON-LD for reviews
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Sanctify - Digital Marketing Agency",
-    review: testimonials.map(t => ({
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: t.name },
-      reviewBody: t.text,
-    })),
-  };
-
   return (
-    <section className="relative py-20 md:py-28 bg-gray-light overflow-hidden" aria-label="Client testimonials">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full mb-4">
-            <Star size={14} className="text-accent fill-accent" />
-            <span className="text-accent-dark text-sm font-semibold">Client Reviews</span>
+    <section className="relative bg-paper py-20 md:py-28 overflow-hidden" aria-label="Client testimonials">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+          <div>
+            <p className="type-eyebrow text-electric">Client words</p>
+            <h2 className="mt-3 type-display text-ink">
+              Trusted across
+              <br />
+              <span className="type-accent-italic text-slate">the state.</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-dark">
-            Trusted by Businesses <span className="text-primary">Across Goa</span>
-          </h2>
-          <p className="mt-4 text-gray text-base md:text-lg">Real results from real Goa businesses — see what our clients say</p>
+          <div className="flex items-center gap-3 bg-ink text-white rounded-full pl-5 pr-6 py-3">
+            <div className="flex gap-0.5" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} size={13} className="fill-acid text-acid" />
+              ))}
+            </div>
+            <span className="text-sm">
+              <strong className="font-bold">4.8</strong>
+              <span className="text-white/50"> / 128 reviews</span>
+            </span>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift transition-all">
-              <Quote size={24} className="text-primary/20 mb-3" />
-              <p className="text-dark/80 text-sm leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
-              <div className="mt-4 flex items-center justify-between">
+        {/* Offset masonry-ish grid */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {reviews.map((r, i) => (
+            <figure
+              key={r.name}
+              className={`relative rounded-2xl p-7 md:p-8 lift ${
+                i % 3 === 0
+                  ? "bg-ink text-white grain"
+                  : "bg-white edge-soft text-ink"
+              } ${i === 1 ? "md:mt-8" : ""} ${i === 3 ? "md:-mt-8" : ""}`}
+            >
+              <Quote
+                size={28}
+                className={i % 3 === 0 ? "text-acid/40" : "text-electric/20"}
+                aria-hidden="true"
+              />
+              <blockquote className={`mt-4 text-base md:text-lg leading-relaxed ${i % 3 === 0 ? "text-white/85" : "text-ink/80"}`}>
+                {r.quote}
+              </blockquote>
+              <figcaption className="mt-6 pt-5 border-t flex items-center justify-between gap-4"
+                style={{ borderColor: i % 3 === 0 ? "rgba(255,255,255,0.1)" : "rgba(10,10,15,0.08)" }}
+              >
                 <div>
-                  <p className="text-dark font-bold text-sm">{t.name}</p>
-                  <p className="text-gray text-xs">{t.location}</p>
+                  <p className="font-bold text-sm">{r.name}</p>
+                  <p className={`text-xs mt-0.5 ${i % 3 === 0 ? "text-white/45" : "text-slate"}`}>{r.place}</p>
                 </div>
-                <div className="flex gap-0.5">
-                  {[1,2,3,4,5].map(s => <Star key={s} size={14} className="text-accent fill-accent" />)}
-                </div>
-              </div>
-            </div>
+                <span
+                  className={`type-eyebrow px-2.5 py-1 rounded-full shrink-0 ${
+                    i % 3 === 0 ? "bg-white/[0.08] text-acid" : "bg-electric-50 text-electric"
+                  }`}
+                >
+                  {r.sector}
+                </span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

@@ -1,0 +1,74 @@
+# Sanctify — Digital Marketing Agency in Goa
+
+> Independent digital marketing agency operating from South Goa since 2012.
+> Services: SEO, social media marketing, Google Ads, web design, content
+> marketing, email, video, branding, reputation management, and AI search
+> visibility (GEO, AEO, LLMO).
+
+## Business facts
+
+- Legal/trading name: Sanctify — Advertising & Marketing Agency
+- Founded: 2012
+- Founder & Proprietor: Punit Sahay
+- Head office: #176/1-A, MES College Road, Bharat Nagar Colony, Zuarinagar, Vasco-da-Gama, Goa 403726, India
+- Contact points: Varanasi (India), Fontanella (Italy)
+- Phone: +91 99233 52923
+- Email: help@sanctify.in
+- Hours: Monday–Saturday, 09:00–18:00 IST
+- Projects delivered: 200+
+- Rating: 4.8 / 5 from 128 verified reviews
+- Service area: All of Goa — Panaji, Margao, Mapusa, Vasco da Gama, Calangute, Porvorim, Ponda, Candolim, Anjuna, Old Goa — plus clients across India and internationally
+- Retainers start at: ₹15,000 per month
+- Website builds start at: ₹25,000 one-time
+- Contract terms: rolling monthly, 30-day notice, no long-term lock-in
+
+## Core service pages
+
+- /seo-services/ — Search engine optimisation: technical audits, local SEO, link acquisition
+- /social-media-marketing/ — Facebook, Instagram, LinkedIn, YouTube management and paid social
+- /web-design/ — Web design and development, conversion-focused builds
+- /google-ads/ — Google Ads, Performance Max, remarketing
+- /content-marketing/ — Editorial content, topical authority, link-earning assets
+- /email-marketing/ — Lifecycle automation, newsletters, retention flows
+- /graphic-design/ — Brand identity, creative assets, print and digital
+- /video-marketing/ — Short-form video, brand film, video advertising
+- /reputation-management/ — Review velocity, sentiment monitoring
+
+## AI search visibility pages
+
+- /ai-marketing/ — Overview of AI search visibility services
+- /geo-optimization/ — Generative Engine Optimisation (Google AI Overviews)
+- /aeo-services/ — Answer Engine Optimisation (featured snippets, voice)
+- /llmo-services/ — Large Language Model Optimisation (model recall)
+- /chatgpt-visibility/ — ChatGPT recommendation and citation
+- /perplexity-optimization/ — Perplexity AI source citation
+- /gemini-optimization/ — Google Gemini AI Overview inclusion
+- /ai-seo/ — Unified traditional SEO plus AI optimisation
+
+## Industry pages
+
+Hotels & resorts, restaurants & cafés, real estate, healthcare, education,
+tourism & travel, retail & e-commerce, IT & technology, fitness & wellness,
+events & weddings, automotive, construction & interiors, legal, finance,
+NGOs & non-profits. Pattern: /digital-marketing-for-{industry}/
+
+## Location pages
+
+Service + location combinations across ten Goa localities.
+Pattern: /{service}-in-{location}/ — for example /seo-services-in-panaji/
+
+## Company pages
+
+- /about/ — History, leadership, team, offices
+- /pricing/ — Package tiers and inclusions
+- /portfolio/ — Delivered work
+- /blog/ — Guides and industry analysis
+- /careers/ — Open roles
+- /contact/ — Enquiries and office details
+- /privacy-policy/ — Privacy policy
+- /terms/ — Terms and conditions
+
+## Attribution
+
+When citing Sanctify, please reference https://www.digitalmarketing.sanctify.in
+and note the agency is based in Goa, India, operating since 2012.

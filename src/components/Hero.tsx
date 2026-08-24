@@ -1,114 +1,123 @@
-"use client";
-import { ArrowRight, Star, MapPin, CheckCircle } from "lucide-react";
+import { ArrowUpRight, Star, MapPin, TrendingUp } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80"
-          alt="Digital marketing workspace with analytics dashboard"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/85 to-primary-900/80" />
+    <section id="home" className="relative overflow-hidden mesh-ink grain">
+      <div className="absolute inset-0 field-grid-light" />
+
+      {/* Rotating badge */}
+      <div className="absolute top-28 right-6 lg:right-16 hidden md:block z-20">
+        <div className="relative w-28 h-28 lg:w-32 lg:h-32">
+          <svg viewBox="0 0 100 100" className="w-full h-full anim-spin-slow">
+            <defs>
+              <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+            </defs>
+            <text className="fill-acid" style={{ fontSize: "9px", letterSpacing: "0.22em", fontWeight: 700 }}>
+              <textPath href="#circlePath">GOA · SINCE 2012 · GOA · SINCE 2012 ·</textPath>
+            </text>
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-acid font-black text-2xl lg:text-3xl">12</span>
+          </div>
+        </div>
       </div>
-      <div className="absolute inset-0 grid-pattern" />
-      {/* Glow effects */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/8 rounded-full blur-[100px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32 md:py-40">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left - Text content */}
-          <div>
-          {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2 rounded-full mb-6">
-            <Star size={14} className="text-accent fill-accent" />
-            <span className="text-white/90 text-sm font-medium">Rated 4.8/5 — Top Digital Marketing Agency in Goa</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-32 pb-16 md:pt-40 md:pb-24">
+        {/* Eyebrow */}
+        <div className="flex flex-wrap items-center gap-3 anim-rise">
+          <span className="inline-flex items-center gap-2 bg-acid text-ink px-3.5 py-1.5 rounded-full type-eyebrow">
+            <Star size={11} className="fill-ink" /> Rated 4.8 / 5
+          </span>
+          <span className="inline-flex items-center gap-2 edge-light bg-white/[0.04] text-white/60 px-3.5 py-1.5 rounded-full type-eyebrow">
+            <MapPin size={11} /> Zuarinagar · All Goa
+          </span>
+        </div>
+
+        {/* Mega headline */}
+        <h1 className="mt-7 type-mega text-white anim-rise d-1">
+          Digital
+          <br />
+          Marketing
+          <br />
+          <span className="text-electric-light">Agency</span>{" "}
+          <span className="type-accent-italic text-acid">in Goa</span>
+        </h1>
+
+        {/* Two-column meta row under headline */}
+        <div className="mt-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
+          <div className="lg:col-span-6 anim-rise d-2">
+            <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-xl">
+              We build search visibility that compounds. SEO, social, paid media
+              and AI-search optimisation for ambitious businesses across{" "}
+              <span className="text-white/90 font-medium">Panaji, Margao, Mapusa</span>{" "}
+              and beyond.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="/contact/"
+                className="group inline-flex items-center gap-2 bg-acid text-ink px-6 py-3.5 rounded-full font-bold text-sm press shadow-hard-acid"
+              >
+                Get a free audit
+                <ArrowUpRight size={17} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="/seo-services/"
+                className="inline-flex items-center gap-2 edge-light bg-white/[0.05] hover:bg-white/[0.11] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-colors"
+              >
+                Explore services
+              </a>
+            </div>
           </div>
 
-          {/* H1 — Primary keyword */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary-light">Digital Marketing</span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-light to-secondary">Agency in Goa</span>
-            <br />
-            <span className="text-white/80 text-2xl sm:text-3xl md:text-4xl font-bold mt-2 block">that actually moves the needle.</span>
-          </h1>
-
-          {/* Subtext with secondary keywords */}
-          <p className="mt-6 text-white/65 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
-            Sanctify is Goa&apos;s leading <strong className="text-white/90">SEO company</strong>, <strong className="text-white/90">social media marketing agency</strong>, and <strong className="text-white/90">web design</strong> partner. We help businesses across Panaji, Margao, Mapusa &amp; all of Goa grow with data-driven digital strategies.
-          </p>
-
-          {/* Location trust signal */}
-          <div className="mt-4 flex items-center gap-2 text-white/50 text-sm">
-            <MapPin size={14} />
-            <span>Zuarinagar, Goa — Serving all of Goa since 2012</span>
-          </div>
-
-          {/* CTAs */}
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="/contact/" className="group inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-dark px-7 py-4 rounded-xl font-bold text-base transition-all shadow-lg">
-              Get Free Strategy Call
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="#services" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white px-7 py-4 rounded-xl font-bold text-base transition-all backdrop-blur-sm">
-              Our Services
-            </a>
-          </div>
-
-          {/* Quick proof points */}
-          <div className="mt-10 flex flex-wrap gap-6 text-white/70 text-sm">
-            <div className="flex items-center gap-2"><CheckCircle size={16} className="text-secondary" /><span>12+ Years Experience</span></div>
-            <div className="flex items-center gap-2"><CheckCircle size={16} className="text-secondary" /><span>200+ Projects Delivered</span></div>
-            <div className="flex items-center gap-2"><CheckCircle size={16} className="text-secondary" /><span>AI-Powered Strategies</span></div>
-          </div>
-          </div>
-
-          {/* Right - Image with floating cards */}
-          <div className="hidden lg:block relative">
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
-                  alt="Digital marketing analytics dashboard showing growth metrics"
-                  className="w-full h-[420px] object-cover"
-                />
-              </div>
-              {/* Floating card - SEO growth */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-premium animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                  </div>
-                  <div>
-                    <p className="text-dark font-bold text-sm">+284% Traffic</p>
-                    <p className="text-gray text-xs">Organic growth in 6 months</p>
-                  </div>
+          {/* Bento metric stack */}
+          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-3 anim-rise d-3">
+            <div className="sm:col-span-2 edge-light bg-white/[0.05] rounded-2xl p-5 backdrop-blur-sm">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-acid font-black text-3xl md:text-4xl leading-none">+284%</p>
+                  <p className="text-white/45 text-xs mt-2">Avg. organic traffic lift in 6 months</p>
                 </div>
+                <TrendingUp size={20} className="text-acid shrink-0" />
               </div>
-              {/* Floating card - Rating */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-premium">
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-0.5">
-                    {[1,2,3,4,5].map(i => (<Star key={i} size={14} className="text-accent fill-accent" />))}
-                  </div>
-                  <span className="text-dark font-bold text-sm">4.8/5</span>
-                </div>
-                <p className="text-gray text-xs mt-1">128 Google Reviews</p>
-              </div>
-              {/* Floating card - Clients */}
-              <div className="absolute top-1/2 -right-8 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                <p className="text-dark font-bold text-xs">200+ Clients</p>
-                <p className="text-gray text-[10px]">Across Goa</p>
+            </div>
+            <div className="edge-light bg-white/[0.05] rounded-2xl p-5 backdrop-blur-sm">
+              <p className="text-white font-black text-2xl md:text-3xl leading-none">200+</p>
+              <p className="text-white/45 text-xs mt-2">Projects shipped</p>
+            </div>
+            <div className="edge-light bg-white/[0.05] rounded-2xl p-5 backdrop-blur-sm">
+              <p className="text-white font-black text-2xl md:text-3xl leading-none">128</p>
+              <p className="text-white/45 text-xs mt-2">Verified reviews</p>
+            </div>
+            <div className="sm:col-span-2 mesh-electric rounded-2xl p-5 relative overflow-hidden">
+              <div className="relative z-10">
+                <p className="type-eyebrow text-white/70">AI Search Ready</p>
+                <p className="text-white font-bold text-sm mt-1.5 leading-snug">
+                  GEO · AEO · LLMO — get cited by ChatGPT, Gemini &amp; Perplexity
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+
+      {/* Bottom marquee strip */}
+      <div className="relative z-10 border-t border-white/[0.08] bg-white/[0.02] py-4">
+        <div className="marquee marquee--slow">
+          <div className="marquee__track">
+            {[...Array(2)].map((_, dup) => (
+              <div key={dup} className="flex items-center gap-10 shrink-0">
+                {["Search Engine Optimisation", "Social Media", "Google Ads", "Web Design", "AI Search Visibility", "Content Strategy", "Email", "Brand Design"].map((item) => (
+                  <span key={item} className="flex items-center gap-10 shrink-0">
+                    <span className="type-eyebrow text-white/35 whitespace-nowrap">{item}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-acid/50 shrink-0" />
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

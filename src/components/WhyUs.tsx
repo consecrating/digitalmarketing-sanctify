@@ -1,64 +1,90 @@
-"use client";
-import { Award, TrendingUp, Users, Zap, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 
-const reasons = [
-  { icon: Award, title: "12+ Years in Digital Marketing", desc: "Since 2012, we've been helping Goa businesses grow online with proven digital strategies." },
-  { icon: TrendingUp, title: "Data-Driven Results", desc: "Every campaign is backed by analytics. We track ROI, conversions, and growth metrics religiously." },
-  { icon: Users, title: "200+ Happy Clients", desc: "From startups to established brands across Goa — hotels, restaurants, real estate, and more." },
-  { icon: Zap, title: "AI-First Approach", desc: "We leverage AI tools for content creation, ad optimization, and predictive analytics — staying ahead of the curve." },
-  { icon: MapPin, title: "Goa-Local Expertise", desc: "We understand the Goan market — tourism seasonality, local audiences, and what works here." },
-  { icon: ShieldCheck, title: "Transparent Reporting", desc: "Monthly reports with clear KPIs. No vanity metrics — only numbers that matter to your business." },
+const pillars = [
+  { n: "01", title: "Integrated, not fragmented", body: "One team owns brand, search, social and paid. No agency ping-pong, no conflicting strategies." },
+  { n: "02", title: "Research before spend", body: "Every engagement opens with market, competitor and SERP intelligence — so budget follows evidence." },
+  { n: "03", title: "Local depth, national standard", body: "We know Goa's seasonality, its tourist-vs-resident split, and how demand actually moves here." },
+  { n: "04", title: "Reporting you can audit", body: "Live dashboards, plain-English monthly reviews, and metrics tied to revenue — not impressions." },
 ];
 
 export function WhyUs() {
   return (
-    <section id="about" className="relative py-20 md:py-28 bg-gray-light overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left content */}
-          <div>
-            {/* Team image */}
-            <div className="relative mb-8 rounded-2xl overflow-hidden shadow-premium">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80"
-                alt="Sanctify digital marketing team collaborating in Goa office"
-                className="w-full h-[280px] md:h-[320px] object-cover"
-              />
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
-                <p className="text-dark font-bold text-sm">12+ Years of Excellence</p>
-                <p className="text-gray text-xs">Award-winning agency since 2012</p>
-              </div>
-            </div>
+    <section id="about" className="relative mesh-sand py-20 md:py-28 overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+          {/* Sticky left column */}
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-28">
+              <p className="type-eyebrow text-electric">Why Sanctify</p>
+              <h2 className="mt-3 type-display text-ink">
+                A growth partner,
+                <br />
+                <span className="type-accent-italic text-slate">not a vendor.</span>
+              </h2>
+              <p className="mt-5 text-slate text-base leading-relaxed max-w-md">
+                Sanctify has operated out of South Goa since 2012. Over 200
+                projects later, the thing clients keep citing isn&apos;t a channel —
+                it&apos;s that one accountable team carries the whole strategy.
+              </p>
 
-            <div className="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full mb-6">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-              <span className="text-primary text-sm font-semibold">Why Businesses in Goa Choose Sanctify</span>
+              <div className="mt-7 bg-white edge-soft rounded-2xl p-5 max-w-md">
+                <div className="flex items-center gap-3">
+                  <span className="w-11 h-11 rounded-full bg-ink text-acid grid place-items-center font-bold text-sm shrink-0">PS</span>
+                  <div>
+                    <p className="font-bold text-ink text-sm">Punit Sahay</p>
+                    <p className="text-slate text-xs">Founder &amp; Proprietor</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-slate text-sm leading-relaxed">
+                  &ldquo;Do great work, stay transparent, treat every client&apos;s growth
+                  as your own. That hasn&apos;t changed in twelve years.&rdquo;
+                </p>
+              </div>
+
+              <a
+                href="/about/"
+                className="mt-6 inline-flex items-center gap-2 text-ink font-bold text-sm sweep"
+              >
+                Read our full story <ArrowUpRight size={15} />
+              </a>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-dark leading-tight">
-              The Best <span className="text-primary">Digital Marketing Company</span> in Goa
-            </h2>
-            <p className="mt-6 text-gray text-base md:text-lg leading-relaxed">
-              Sanctify is not just another digital marketing agency — we&apos;re your growth partner. Based in Zuarinagar, Goa, we combine deep local market knowledge with cutting-edge digital expertise to deliver measurable results for businesses across Panaji, Margao, Mapusa, Vasco, Calangute, and beyond.
-            </p>
-            <p className="mt-4 text-gray text-base leading-relaxed">
-              As a full-service <strong className="text-dark">digital marketing agency in Goa</strong>, we handle everything from SEO and social media to paid ads and AI-powered marketing — so you can focus on running your business while we focus on growing it.
-            </p>
-            <a href="/contact/" className="mt-8 inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-primary">
-              Start Growing Today
-            </a>
           </div>
 
-          {/* Right - reason cards */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {reasons.map((r, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover-lift transition-all">
-                <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center mb-3">
-                  <r.icon size={20} className="text-primary" />
+          {/* Numbered pillars */}
+          <div className="lg:col-span-7">
+            <ul className="space-y-3">
+              {pillars.map((p) => (
+                <li
+                  key={p.n}
+                  className="group bg-white edge-soft rounded-2xl p-6 md:p-7 lift hover:border-ink/20"
+                >
+                  <div className="flex items-start gap-5">
+                    <span className="font-black text-2xl md:text-3xl text-electric-100 group-hover:text-acid transition-colors shrink-0 leading-none">
+                      {p.n}
+                    </span>
+                    <div>
+                      <h3 className="font-bold text-ink text-lg md:text-xl tracking-tight">{p.title}</h3>
+                      <p className="mt-2 text-slate text-sm md:text-[0.9375rem] leading-relaxed">{p.body}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {/* Credential strip */}
+            <div className="mt-4 bg-ink rounded-2xl p-6 md:p-7 grain relative overflow-hidden">
+              <div className="absolute inset-0 field-dots-light opacity-50" />
+              <div className="relative z-10">
+                <p className="type-eyebrow text-acid">In-house capability</p>
+                <div className="mt-4 flex flex-wrap gap-2.5">
+                  {["Strategy", "Technical SEO", "Content", "Paid Media", "Design", "Development", "Video", "Analytics", "AI Search"].map((c) => (
+                    <span key={c} className="inline-flex items-center gap-1.5 text-xs font-medium text-white/70 bg-white/[0.07] border border-white/10 px-3 py-1.5 rounded-full">
+                      <Check size={11} className="text-acid" /> {c}
+                    </span>
+                  ))}
                 </div>
-                <h3 className="text-dark font-bold text-sm mb-1">{r.title}</h3>
-                <p className="text-gray text-xs leading-relaxed">{r.desc}</p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

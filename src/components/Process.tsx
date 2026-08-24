@@ -1,46 +1,80 @@
-"use client";
+import { Search, PenTool, Rocket, LineChart } from "lucide-react";
 
 const steps = [
-  { num: "01", title: "Discovery & Audit", desc: "We analyze your current digital presence, competitors, and target audience to identify growth opportunities specific to your Goa-based business." },
-  { num: "02", title: "Strategy & Planning", desc: "Custom digital marketing strategy tailored to your goals — whether it's more footfall, online bookings, or brand awareness across Goa." },
-  { num: "03", title: "Execution & Launch", desc: "Our team implements the strategy — launching campaigns, optimizing your website, creating content, and managing your social media." },
-  { num: "04", title: "Measure & Optimize", desc: "Continuous monitoring, A/B testing, and optimization. Monthly reports with actionable insights to maximize your ROI." },
+  {
+    n: "01",
+    icon: Search,
+    title: "Immerse & audit",
+    body: "We map your current visibility, technical health, competitor SERPs and buyer intent before recommending anything.",
+    output: "Audit deck + opportunity map",
+  },
+  {
+    n: "02",
+    icon: PenTool,
+    title: "Strategy & roadmap",
+    body: "A prioritised 90-day plan: which keywords, which channels, which pages, and what each one is expected to return.",
+    output: "90-day roadmap + KPI targets",
+  },
+  {
+    n: "03",
+    icon: Rocket,
+    title: "Build & launch",
+    body: "In-house execution across content, technical fixes, creative and campaign setup. No outsourcing, no waiting.",
+    output: "Live campaigns + shipped pages",
+  },
+  {
+    n: "04",
+    icon: LineChart,
+    title: "Measure & compound",
+    body: "Weekly optimisation, monthly review, quarterly strategy reset. Gains stack instead of resetting.",
+    output: "Dashboard + monthly review",
+  },
 ];
 
 export function Process() {
   return (
-    <section id="process" className="relative py-20 md:py-28 gradient-dark overflow-hidden">
-      <div className="absolute inset-0 grid-pattern" />
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px]" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
-            <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            <span className="text-white/80 text-sm font-semibold">Our Proven Process</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
-            How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-light to-secondary">Grow Your Business</span>
+    <section id="process" className="relative bg-ink py-20 md:py-28 grain overflow-hidden">
+      <div className="absolute inset-0 field-grid-light" />
+      <div className="absolute top-1/4 left-0 w-[420px] h-[420px] rounded-full bg-electric/15 blur-[120px]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="max-w-2xl">
+          <p className="type-eyebrow text-acid">How we work</p>
+          <h2 className="mt-3 type-display text-white">
+            Four phases.
+            <br />
+            <span className="type-accent-italic text-electric-light">Zero guesswork.</span>
           </h2>
-          <p className="mt-4 text-white/55 text-base md:text-lg">A systematic 4-step approach to digital marketing success in Goa</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Connected timeline */}
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s, i) => (
-            <div key={i} className="bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.15] rounded-2xl p-6 transition-all duration-300 relative overflow-hidden">
-              <img
-                src={
-                  i === 0 ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=75" :
-                  i === 1 ? "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&q=75" :
-                  i === 2 ? "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=75" :
-                  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=75"
-                }
-                alt={s.title}
-                className="w-full h-32 object-cover rounded-xl mb-4 opacity-60"
-              />
-              <span className="text-primary-light font-black text-3xl">{s.num}</span>
-              <h3 className="text-white font-bold text-base mt-3 mb-2">{s.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
-            </div>
+            <article
+              key={s.n}
+              className="group relative edge-light bg-white/[0.04] hover:bg-white/[0.08] rounded-2xl p-6 transition-colors"
+            >
+              {/* Connector line */}
+              {i < steps.length - 1 && (
+                <span className="hidden lg:block absolute top-11 -right-2 w-4 h-px bg-white/15" aria-hidden="true" />
+              )}
+
+              <div className="flex items-center justify-between">
+                <span className="w-11 h-11 rounded-xl bg-acid text-ink grid place-items-center shrink-0">
+                  <s.icon size={19} />
+                </span>
+                <span className="font-black text-3xl text-white/[0.09] group-hover:text-white/20 transition-colors leading-none">
+                  {s.n}
+                </span>
+              </div>
+
+              <h3 className="mt-5 font-bold text-white text-lg tracking-tight">{s.title}</h3>
+              <p className="mt-2.5 text-white/50 text-sm leading-relaxed">{s.body}</p>
+
+              <p className="mt-5 pt-4 border-t border-white/[0.08] type-eyebrow text-acid/70">
+                {s.output}
+              </p>
+            </article>
           ))}
         </div>
       </div>

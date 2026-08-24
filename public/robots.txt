@@ -1,14 +1,31 @@
-# Robots.txt for digitalmarketing.sanctify.in
+# robots.txt — www.digitalmarketing.sanctify.in
+# Sanctify — Digital Marketing Agency in Goa
+
 User-agent: *
 Allow: /
 Disallow: /_next/
-Disallow: /api/
 
-# Allow all search engines
+# Search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+# AI crawlers — allowed, since AI visibility is part of our own offering
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.digitalmarketing.sanctify.in/sitemap.xml
