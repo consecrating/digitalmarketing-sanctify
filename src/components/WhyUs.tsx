@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check } from "lucide-react";
+import { IMG } from "@/lib/images";
 
 const pillars = [
   { n: "01", title: "Integrated, not fragmented", body: "One team owns brand, search, social and paid. No agency ping-pong, no conflicting strategies." },
@@ -27,7 +28,13 @@ export function WhyUs() {
                 it&apos;s that one accountable team carries the whole strategy.
               </p>
 
-              <div className="mt-7 bg-white edge-soft rounded-2xl p-5 max-w-md">
+              <div className="mt-7 rounded-2xl overflow-hidden edge-soft shadow-float max-w-md">
+                <img src={IMG.officeCollab} alt="Sanctify strategists reviewing campaign performance together"
+                  width={800} height={420} loading="lazy"
+                  className="w-full h-[200px] object-cover" />
+              </div>
+
+              <div className="mt-4 bg-white edge-soft rounded-2xl p-5 max-w-md">
                 <div className="flex items-center gap-3">
                   <span className="w-11 h-11 rounded-full bg-ink text-acid grid place-items-center font-bold text-sm shrink-0">PS</span>
                   <div>

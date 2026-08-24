@@ -19,6 +19,8 @@ export default function PricingPage() {
         accent="scoped honestly."
         lede="Retainers from ₹15,000 per month and websites from ₹25,000. Rolling monthly terms with 30 days' notice — no lock-in. Every engagement starts with a free audit so scope is agreed before you commit."
         crumbs={[{ href: "/", label: "Home" }, { label: "Pricing" }]}
+        image="/images/meeting-client.webp"
+        imageAlt="Client discussion about scope and pricing"
         meta={
           <FactGrid
             items={[

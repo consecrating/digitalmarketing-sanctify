@@ -34,6 +34,8 @@ export default function TermsPage() {
         accent="Conditions"
         lede="These terms govern engagements with Sanctify — Advertising & Marketing Agency, operating from Zuarinagar, Goa. Last reviewed August 2026."
         crumbs={[{ href: "/", label: "Home" }, { label: "Terms & Conditions" }]}
+        image="/images/office-collab.webp"
+        imageAlt="Sanctify team at work"
       />
 
       <section className="bg-paper py-16 md:py-20">

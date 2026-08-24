@@ -2,6 +2,7 @@ import { ArrowUpRight, Check, ChevronRight, TrendingUp } from "lucide-react";
 import { PageHero, FactGrid } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { industryImage } from "@/lib/images";
 
 const services = [
   { href: "/seo-services/", label: "SEO Services", d: "Rank for the queries your buyers actually use." },
@@ -39,6 +40,7 @@ export function IndustryPageTemplate({
   industrySlug: string;
   keyword: string;
 }) {
+  const img = industryImage(industrySlug);
   return (
     <>
       <PageHero
@@ -51,6 +53,8 @@ export function IndustryPageTemplate({
           { href: "/#services", label: "Industries" },
           { label: industryName },
         ]}
+        image={img.src}
+        imageAlt={img.alt}
         meta={
           <FactGrid
             items={[

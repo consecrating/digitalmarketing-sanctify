@@ -1,3 +1,4 @@
+import { IMG } from "@/lib/images";
 import { Search, Share2, Layout, MousePointerClick, PenTool, Brain, Mail, Palette, Video, Shield, ArrowUpRight } from "lucide-react";
 
 const featured = [
@@ -7,6 +8,8 @@ const featured = [
     href: "/seo-services/",
     blurb: "Technical audits, local pack domination, and topical authority that compounds month after month.",
     points: ["Technical SEO & Core Web Vitals", "Google Business Profile", "Link acquisition"],
+    image: IMG.seoAnalytics,
+    imageAlt: "Search analytics dashboard showing organic growth",
   },
   {
     icon: Brain,
@@ -14,6 +17,8 @@ const featured = [
     href: "/ai-marketing/",
     blurb: "Be the brand that ChatGPT, Gemini and Perplexity recommend when buyers ask.",
     points: ["GEO — generative engines", "AEO — answer engines", "LLMO — model recall"],
+    image: IMG.aiSearch,
+    imageAlt: "Abstract visual representing AI-driven search",
   },
 ];
 
@@ -78,6 +83,11 @@ export function ServicesOverview() {
                       i === 0 ? "text-acid" : "text-electric"
                     }`}
                   />
+                </div>
+
+                <div className="mt-6 rounded-xl overflow-hidden">
+                  <img src={s.image} alt={s.imageAlt} width={800} height={360} loading="lazy"
+                    className="w-full h-[160px] md:h-[190px] object-cover zoom-img" />
                 </div>
 
                 <h3 className="mt-6 type-heading">{s.title}</h3>

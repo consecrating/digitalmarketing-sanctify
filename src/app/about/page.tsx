@@ -13,17 +13,17 @@ export const metadata: Metadata = {
 
 /* Human team — replace `photo` with real headshot paths when available */
 const team = [
-  { name: "Priya Sharma", role: "Head of SEO", focus: "Technical audits, local search" },
-  { name: "Ananya Desai", role: "Social Media Director", focus: "Channel strategy, community" },
-  { name: "Sneha Kulkarni", role: "Content Strategist", focus: "Editorial planning, topical depth" },
-  { name: "Kavya Naik", role: "Google Ads Specialist", focus: "Search, PMax, bid strategy" },
-  { name: "Isha Patil", role: "UI/UX Designer", focus: "Interface design, conversion flows" },
-  { name: "Neha Bhatt", role: "Graphic Designer", focus: "Brand systems, campaign creative" },
-  { name: "Riya Fernandes", role: "Social Media Manager", focus: "Publishing, engagement" },
-  { name: "Tanvi Gawas", role: "Web Developer", focus: "Front-end build, Core Web Vitals" },
-  { name: "Divya Kamat", role: "Email Marketing Lead", focus: "Lifecycle flows, automation" },
-  { name: "Meera Shetty", role: "AI & Analytics Lead", focus: "Measurement, AI visibility" },
-  { name: "Aisha Verma", role: "Client Success Manager", focus: "Account management, reporting" },
+  { name: "Priya Sharma", role: "Head of SEO", focus: "Technical audits, local search", photo: "/images/team-01.webp" },
+  { name: "Ananya Desai", role: "Social Media Director", focus: "Channel strategy, community", photo: "/images/team-02.webp" },
+  { name: "Sneha Kulkarni", role: "Content Strategist", focus: "Editorial planning, topical depth", photo: "/images/team-03.webp" },
+  { name: "Kavya Naik", role: "Google Ads Specialist", focus: "Search, PMax, bid strategy", photo: "/images/team-04.webp" },
+  { name: "Isha Patil", role: "UI/UX Designer", focus: "Interface design, conversion flows", photo: "/images/team-05.webp" },
+  { name: "Neha Bhatt", role: "Graphic Designer", focus: "Brand systems, campaign creative", photo: "/images/team-06.webp" },
+  { name: "Riya Fernandes", role: "Social Media Manager", focus: "Publishing, engagement", photo: "/images/team-07.webp" },
+  { name: "Tanvi Gawas", role: "Web Developer", focus: "Front-end build, Core Web Vitals", photo: "/images/team-08.webp" },
+  { name: "Divya Kamat", role: "Email Marketing Lead", focus: "Lifecycle flows, automation", photo: "/images/team-09.webp" },
+  { name: "Meera Shetty", role: "AI & Analytics Lead", focus: "Measurement, AI visibility", photo: "/images/team-10.webp" },
+  { name: "Aisha Verma", role: "Client Success Manager", focus: "Account management, reporting", photo: "/images/team-11.webp" },
 ];
 
 const aiAgents = [
@@ -46,11 +46,17 @@ const offices = [
   { tag: "Contact Point", city: "Fontanella, Italy", lines: ["Pran's Food snc,", "Via Circonvallazione 868,", "24056 Fontanella, Italy"], phone: "+39 320 805 8390", tel: "+393208058390" },
 ];
 
-function Avatar({ name }: { name: string }) {
-  const initials = name.split(" ").map((n) => n[0]).join("");
+function Avatar({ photo, name }: { photo: string; name: string }) {
   return (
-    <span className="w-full aspect-square rounded-xl bg-ink text-acid grid place-items-center font-black text-lg tracking-tight">
-      {initials}
+    <span className="block w-full aspect-square rounded-xl overflow-hidden bg-sand-dark">
+      <img
+        src={photo}
+        alt={`Portrait of ${name}`}
+        width={320}
+        height={320}
+        loading="lazy"
+        className="w-full h-full object-cover zoom-img"
+      />
     </span>
   );
 }
@@ -64,6 +70,8 @@ export default function AboutPage() {
         accent="built in Goa."
         lede="Sanctify was founded in 2012 on a straightforward conviction: businesses in Goa deserved advertising and digital marketing built to a national standard. Fourteen years and 200+ projects later, that remains the operating principle."
         crumbs={[{ href: "/", label: "Home" }, { label: "About" }]}
+        image="/images/office-collab.webp"
+        imageAlt="Sanctify strategists reviewing campaign performance together"
         meta={
           <FactGrid
             items={[
@@ -213,11 +221,11 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {team.map((m, i) => (
               <Reveal key={m.name} delay={i * 45}>
                 <figure className="group bg-white edge-soft rounded-2xl p-4 lift hover:border-ink/20 h-full">
-                  <Avatar name={m.name} />
+                  <Avatar photo={m.photo} name={m.name} />
                   <figcaption className="mt-3.5">
                     <p className="font-bold text-ink text-[0.8125rem] leading-tight">{m.name}</p>
                     <p className="text-electric text-[0.6875rem] font-semibold mt-1">{m.role}</p>
@@ -227,6 +235,11 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+
+          <p className="mt-6 text-slate-light text-[0.6875rem] leading-relaxed max-w-2xl">
+            Team imagery is representative. Names, roles and areas of focus reflect the
+            actual team structure.
+          </p>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import { ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import { PageHero, FactGrid } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { serviceImage } from "@/lib/images";
 
 const locations = [
   { slug: "panaji", name: "Panaji" }, { slug: "margao", name: "Margao" },
@@ -62,6 +63,7 @@ export function ServicePageTemplate({
   description: string;
   slug: string;
 }) {
+  const img = serviceImage(slug);
   return (
     <>
       <PageHero
@@ -70,6 +72,8 @@ export function ServicePageTemplate({
         accent="in Goa"
         lede={description}
         crumbs={[{ href: "/", label: "Home" }, { label: title }]}
+        image={img.src}
+        imageAlt={img.alt}
         meta={
           <FactGrid
             items={[

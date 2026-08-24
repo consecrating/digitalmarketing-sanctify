@@ -50,6 +50,10 @@ export function Contact() {
             </div>
 
             <div className="lg:col-span-5 anim-rise d-3">
+              <div className="rounded-2xl overflow-hidden edge-soft shadow-float mb-4">
+                <img src="/images/meeting-client.webp" alt="A client consultation at the Sanctify office in Goa"
+                  width={800} height={400} loading="lazy" className="w-full h-[180px] object-cover" />
+              </div>
               <dl className="grid grid-cols-2 gap-3">
                 {[
                   { k: "Response time", v: "Within 24 hours" },

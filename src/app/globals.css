@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Distinctive palette — electric indigo + acid lime + warm sand */
-  --color-ink: #0A0A0F;
-  --color-ink-soft: #14141C;
-  --color-ink-muted: #1E1E28;
+  /* Distinctive palette — deep navy (never black) + electric indigo + acid lime + warm sand */
+  --color-ink: #1A2142;
+  --color-ink-soft: #232B52;
+  --color-ink-muted: #2E3766;
 
   --color-electric: #4F3FFF;
   --color-electric-light: #7B6EFF;
@@ -115,12 +115,12 @@
 }
 
 .mesh-ink {
-  background-color: #0A0A0F;
+  background-color: #1A2142;
   background-image:
-    radial-gradient(at 12% 18%, rgba(79, 63, 255, 0.32) 0px, transparent 52%),
-    radial-gradient(at 88% 8%, rgba(199, 244, 100, 0.10) 0px, transparent 48%),
-    radial-gradient(at 72% 88%, rgba(255, 92, 57, 0.14) 0px, transparent 46%),
-    radial-gradient(at 30% 95%, rgba(79, 63, 255, 0.18) 0px, transparent 50%);
+    radial-gradient(at 10% 14%, rgba(79, 63, 255, 0.55) 0px, transparent 55%),
+    radial-gradient(at 86% 10%, rgba(199, 244, 100, 0.16) 0px, transparent 50%),
+    radial-gradient(at 74% 86%, rgba(255, 92, 57, 0.20) 0px, transparent 48%),
+    radial-gradient(at 28% 96%, rgba(46, 55, 102, 0.85) 0px, transparent 55%);
 }
 
 .mesh-sand {
@@ -139,7 +139,7 @@
 
 /* Dot + line field */
 .field-dots {
-  background-image: radial-gradient(rgba(10, 10, 15, 0.10) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(26, 33, 66, 0.10) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
@@ -163,7 +163,7 @@
 }
 
 .edge-soft {
-  border: 1px solid rgba(10, 10, 15, 0.09);
+  border: 1px solid rgba(26, 33, 66, 0.09);
 }
 
 .edge-light {
@@ -184,9 +184,9 @@
 
 .shadow-float {
   box-shadow:
-    0 2px 4px rgba(10, 10, 15, 0.03),
-    0 12px 24px -6px rgba(10, 10, 15, 0.07),
-    0 32px 56px -16px rgba(10, 10, 15, 0.10);
+    0 2px 4px rgba(26, 33, 66, 0.03),
+    0 12px 24px -6px rgba(26, 33, 66, 0.07),
+    0 32px 56px -16px rgba(26, 33, 66, 0.10);
 }
 
 .shadow-glow-electric {
@@ -341,7 +341,7 @@
 .prose-editorial {
   font-size: 1.0625rem;
   line-height: 1.78;
-  color: #2E2E3A;
+  color: #3A4468;
 }
 
 .prose-editorial > p + p { margin-top: 1.35rem; }
@@ -471,7 +471,7 @@
 .prose-editorial > p:first-of-type {
   font-size: 1.1875rem;
   line-height: 1.68;
-  color: #1E1E28;
+  color: #2E3766;
 }
 
 /* Line clamps */

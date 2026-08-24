@@ -1,6 +1,7 @@
 import { Calendar, Clock, User, ArrowUpRight, ArrowLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { blogImage } from "@/lib/images";
 
 const related = [
   { slug: "why-digital-marketing-important-goa-businesses", title: "Why digital marketing matters for Goa businesses" },
@@ -27,6 +28,7 @@ export function BlogPostTemplate({
   slug: string;
   keyword: string;
 }) {
+  const cover = blogImage(slug);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -80,6 +82,16 @@ export function BlogPostTemplate({
           </div>
         </div>
       </header>
+
+      {/* Cover */}
+      <div className="bg-sand">
+        <div className="max-w-[88rem] mx-auto px-5 sm:px-8 lg:px-10 pb-12">
+          <div className="rounded-2xl overflow-hidden edge-soft shadow-float">
+            <img src={cover} alt="" aria-hidden="true" width={1600} height={640}
+              className="w-full h-[220px] md:h-[340px] object-cover" />
+          </div>
+        </div>
+      </div>
 
       <section className="bg-paper py-14 md:py-18">
         <div className="max-w-[88rem] mx-auto px-5 sm:px-8 lg:px-10">

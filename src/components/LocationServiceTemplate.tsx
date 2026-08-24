@@ -2,6 +2,7 @@ import { ArrowUpRight, MapPin, Check, ChevronRight } from "lucide-react";
 import { PageHero, FactGrid } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { serviceImage } from "@/lib/images";
 
 const siblingServices = [
   { href: "/seo-services/", label: "SEO Services" },
@@ -36,6 +37,7 @@ export function LocationServiceTemplate({
   area: string;
   keyword: string;
 }) {
+  const img = serviceImage(serviceSlug);
   const localSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -73,6 +75,8 @@ export function LocationServiceTemplate({
           { href: `/${serviceSlug}/`, label: serviceName },
           { label: locationName },
         ]}
+        image={img.src}
+        imageAlt={`${serviceName} for businesses in ${locationName}, Goa`}
         meta={
           <FactGrid
             items={[

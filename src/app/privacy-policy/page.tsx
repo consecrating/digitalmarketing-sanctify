@@ -31,6 +31,8 @@ export default function PrivacyPage() {
         accent="Policy"
         lede="How Sanctify collects, uses and protects personal information. Last reviewed August 2026."
         crumbs={[{ href: "/", label: "Home" }, { label: "Privacy Policy" }]}
+        image="/images/office-collab.webp"
+        imageAlt="Sanctify team at work"
       />
 
       <section className="bg-paper py-16 md:py-20">

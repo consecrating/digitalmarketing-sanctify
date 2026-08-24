@@ -40,6 +40,8 @@ export default function PortfolioPage() {
         accent="200+ projects."
         lede="Sanctify has delivered work across most of Goa's major commercial sectors since 2012. Detailed case studies — including metrics and client references — are shared on request, since much of the underlying data is commercially sensitive."
         crumbs={[{ href: "/", label: "Home" }, { label: "Portfolio" }]}
+        image="/images/goa-city.webp"
+        imageAlt="Aerial view of the Panaji waterfront in Goa"
         meta={
           <FactGrid
             items={[

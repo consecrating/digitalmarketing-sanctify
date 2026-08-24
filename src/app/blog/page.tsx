@@ -3,6 +3,7 @@ import { ArrowUpRight, Calendar, Clock, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { blogImage } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Insights — Digital Marketing Guides for Goa Businesses",
@@ -56,6 +57,8 @@ export default function BlogPage() {
         accent="the people doing the work."
         lede="No recycled listicles. These are working notes from a team running search, paid media and AI visibility programmes in Goa since 2012."
         crumbs={[{ href: "/", label: "Home" }, { label: "Insights" }]}
+        image="/images/content-writing.webp"
+        imageAlt="Writer drafting content at a workspace"
       >
         <div className="mt-10 flex flex-wrap gap-2 anim-rise d-4">
           {categories.map((c, i) => (
@@ -96,6 +99,10 @@ export default function BlogPage() {
                 >
                   {i === 0 && <div className="absolute inset-0 field-dots-light opacity-50" aria-hidden="true" />}
                   <div className="relative z-10 flex flex-col h-full">
+                    <div className="rounded-xl overflow-hidden mb-5 -mt-1">
+                      <img src={blogImage(p.slug)} alt="" aria-hidden="true" width={800} height={340}
+                        loading="lazy" className="w-full h-[150px] object-cover zoom-img" />
+                    </div>
                     <span
                       className={`self-start type-eyebrow px-2.5 py-1 rounded-full ${
                         i === 0 ? "bg-acid text-ink" : "bg-white text-electric"
@@ -118,7 +125,7 @@ export default function BlogPage() {
 
                     <div
                       className="mt-6 pt-4 border-t flex items-center justify-between gap-4"
-                      style={{ borderColor: i === 0 ? "rgba(255,255,255,0.1)" : "rgba(10,10,15,0.09)" }}
+                      style={{ borderColor: i === 0 ? "rgba(255,255,255,0.1)" : "rgba(26,33,66,0.09)" }}
                     >
                       <span className={`flex items-center gap-3 text-[0.6875rem] ${i === 0 ? "text-white/40" : "text-slate"}`}>
                         <span className="inline-flex items-center gap-1"><Calendar size={10} /> {p.date}</span>

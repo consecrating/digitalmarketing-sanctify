@@ -73,7 +73,7 @@ export function Testimonials() {
                 {r.quote}
               </blockquote>
               <figcaption className="mt-6 pt-5 border-t flex items-center justify-between gap-4"
-                style={{ borderColor: i % 3 === 0 ? "rgba(255,255,255,0.1)" : "rgba(10,10,15,0.08)" }}
+                style={{ borderColor: i % 3 === 0 ? "rgba(255,255,255,0.1)" : "rgba(26,33,66,0.08)" }}
               >
                 <div>
                   <p className="font-bold text-sm">{r.name}</p>

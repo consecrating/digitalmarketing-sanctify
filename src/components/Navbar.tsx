@@ -182,7 +182,7 @@ export function Navbar() {
       <div
         ref={shellRef}
         className={`bg-paper transition-shadow duration-300 ${
-          scrolled || menu ? "shadow-[0_1px_0_0_rgba(10,10,15,0.10),0_8px_24px_-16px_rgba(10,10,15,0.20)]" : "border-b border-ink/[0.08]"
+          scrolled || menu ? "shadow-[0_1px_0_0_rgba(26,33,66,0.10),0_8px_24px_-16px_rgba(26,33,66,0.20)]" : "border-b border-ink/[0.08]"
         }`}
         onMouseLeave={closeOnLeave}
       >

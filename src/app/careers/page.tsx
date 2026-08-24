@@ -38,6 +38,8 @@ export default function CareersPage() {
         accent="not just a CV."
         lede="Sanctify has operated from South Goa since 2012. We hire people who want ownership of their work and direct client contact rather than layers of process between them and the outcome."
         crumbs={[{ href: "/", label: "Home" }, { label: "Careers" }]}
+        image="/images/hero-team.webp"
+        imageAlt="The Sanctify team collaborating in the Goa office"
         meta={
           <FactGrid
             items={[

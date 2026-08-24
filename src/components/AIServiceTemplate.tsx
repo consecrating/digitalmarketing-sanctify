@@ -2,6 +2,7 @@ import { ArrowUpRight, Check, ChevronRight, Brain, Globe, Target } from "lucide-
 import { PageHero, FactGrid } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTABanner } from "@/components/CTABanner";
+import { IMG } from "@/lib/images";
 
 const aiSiblings = [
   { href: "/ai-marketing/", label: "AI Marketing" },
@@ -50,6 +51,8 @@ export function AIServiceTemplate({
           { href: "/ai-marketing/", label: "AI Marketing" },
           { label: title },
         ]}
+        image={IMG.aiSearch}
+        imageAlt="Abstract visual representing AI-driven search visibility"
         meta={
           <FactGrid
             items={[

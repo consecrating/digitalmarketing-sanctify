@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     title: "Digital Marketing Agency in Goa | Sanctify",
     description:
       "SEO, social media, Google Ads, web design and AI search visibility for ambitious businesses across Goa. Operating since 2012.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Sanctify — Digital Marketing Agency in Goa" }],
+    images: [{ url: "/images/og-image.webp", width: 1200, height: 630, alt: "Sanctify — Digital Marketing Agency in Goa" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Digital Marketing Agency in Goa | Sanctify",
     description: "SEO, social, paid media and AI search visibility. Goa, since 2012.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.webp"],
   },
   other: {
     "geo.region": "IN-GA",
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     alternateName: ["Sanctify", "Sanctify Advertising & Marketing Agency Goa"],
     url: SITE,
     logo: { "@type": "ImageObject", url: `${SITE}/images/logo.png`, width: 512, height: 512 },
-    image: `${SITE}/images/og-image.jpg`,
+    image: `${SITE}/images/og-image.webp`,
     description:
       "Digital marketing agency in Goa providing SEO, social media marketing, Google Ads, web design, content and AI search visibility (GEO, AEO, LLMO). Operating from South Goa since 2012.",
     slogan: "Search visibility that compounds.",
@@ -217,7 +217,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="canonical" href={SITE} />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        <meta name="theme-color" content="#0A0A0F" />
+        <meta name="theme-color" content="#1A2142" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />

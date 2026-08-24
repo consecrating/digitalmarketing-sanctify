@@ -110,7 +110,7 @@ export function Pricing() {
                       {p.for}
                     </p>
 
-                    <div className="mt-6 pb-6 border-b" style={{ borderColor: p.featured ? "rgba(255,255,255,0.1)" : "rgba(10,10,15,0.08)" }}>
+                    <div className="mt-6 pb-6 border-b" style={{ borderColor: p.featured ? "rgba(255,255,255,0.1)" : "rgba(26,33,66,0.08)" }}>
                       <span className={`font-black text-4xl tracking-tighter ${p.featured ? "text-white" : "text-ink"}`}>
                         {p.price}
                       </span>
