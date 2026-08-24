@@ -3,7 +3,7 @@ import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 
 export const metadata: Metadata = {
   title: "Google Ads vs Facebook Ads — Which is Better for Goa Businesses?",
-  description: "Learn about Google Ads vs Facebook Ads Goa. Expert insights from Sanctify — Goa's leading digital marketing agency with 12+ years of experience.",
+  description: "Learn about Google Ads vs Facebook Ads Goa. Expert insights from Sanctify — Goa's leading digital marketing agency with 14+ years of experience.",
   alternates: { canonical: "https://www.digitalmarketing.sanctify.in/blog/google-ads-vs-facebook-ads-goa/" },
 };
 

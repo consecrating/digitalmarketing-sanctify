@@ -1,110 +1,208 @@
-"use client";
-import { ArrowRight, Phone, CheckCircle } from "lucide-react";
+import { ArrowUpRight, Check, ChevronRight, TrendingUp } from "lucide-react";
+import { PageHero, FactGrid } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
+import { CTABanner } from "@/components/CTABanner";
 
-interface Props {
+const services = [
+  { href: "/seo-services/", label: "SEO Services", d: "Rank for the queries your buyers actually use." },
+  { href: "/social-media-marketing/", label: "Social Media", d: "Build an audience that returns and refers." },
+  { href: "/google-ads/", label: "Google Ads", d: "Capture intent at the moment of decision." },
+  { href: "/web-design/", label: "Web Design", d: "A site engineered to convert enquiries." },
+  { href: "/content-marketing/", label: "Content Marketing", d: "Answer the questions that precede purchase." },
+  { href: "/ai-marketing/", label: "AI Visibility", d: "Be recommended when buyers ask an AI assistant." },
+];
+
+const otherIndustries = [
+  { slug: "hotels-resorts", name: "Hotels & Resorts" },
+  { slug: "restaurants-cafes", name: "Restaurants & Cafés" },
+  { slug: "real-estate", name: "Real Estate" },
+  { slug: "healthcare", name: "Healthcare" },
+  { slug: "education", name: "Education" },
+  { slug: "tourism", name: "Tourism & Travel" },
+  { slug: "retail", name: "Retail & E-commerce" },
+  { slug: "it-companies", name: "IT & Technology" },
+  { slug: "fitness-wellness", name: "Fitness & Wellness" },
+  { slug: "events-weddings", name: "Events & Weddings" },
+  { slug: "automotive", name: "Automotive" },
+  { slug: "construction", name: "Construction & Interiors" },
+  { slug: "legal", name: "Legal Services" },
+  { slug: "finance", name: "Finance & Insurance" },
+  { slug: "ngos-nonprofits", name: "NGOs & Non-Profits" },
+];
+
+export function IndustryPageTemplate({
+  industryName,
+  industrySlug,
+  keyword,
+}: {
   industryName: string;
   industrySlug: string;
   keyword: string;
-}
-
-export function IndustryPageTemplate({ industryName, industrySlug, keyword }: Props) {
+}) {
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 gradient-hero overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-white/50 text-sm">
-                <li><a href="/" className="hover:text-white">Home</a></li><li>/</li>
-                <li><a href="/#services" className="hover:text-white">Industries</a></li><li>/</li>
-                <li className="text-white/80">{industryName}</li>
-              </ol>
-            </nav>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
-              Digital Marketing for<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-accent">{industryName} in Goa</span>
-            </h1>
-            <p className="mt-6 text-white/65 text-lg leading-relaxed max-w-2xl">
-              Specialized digital marketing strategies designed exclusively for the {industryName.toLowerCase()} sector in Goa. We understand your industry challenges and know exactly how to drive qualified leads and bookings.
-            </p>
-            <a href="/contact/" className="mt-8 inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-dark px-7 py-4 rounded-xl font-bold transition-all">
-              Get Industry-Specific Strategy <ArrowRight size={18} />
-            </a>
+      <PageHero
+        eyebrow="Sector specialism"
+        title={`Digital marketing for ${industryName}`}
+        accent="in Goa"
+        lede={`Sanctify builds sector-specific digital marketing programmes for ${industryName.toLowerCase()} businesses across Goa. Generic strategy underperforms here — the buying journey, seasonality and competitive set are all sector-specific.`}
+        crumbs={[
+          { href: "/", label: "Home" },
+          { href: "/#services", label: "Industries" },
+          { label: industryName },
+        ]}
+        meta={
+          <FactGrid
+            items={[
+              { k: "Sector", v: industryName },
+              { k: "Operating since", v: "2012 · 14+ years" },
+              { k: "Projects delivered", v: "200+" },
+              { k: "Client rating", v: "4.8 / 5" },
+            ]}
+          />
+        }
+      />
+
+      <section className="bg-paper py-16 md:py-20">
+        <div className="max-w-[88rem] mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            <div className="lg:col-span-8">
+              <Reveal>
+                <div className="prose-editorial max-w-3xl">
+                  <h2>The {industryName.toLowerCase()} market in Goa</h2>
+                  <p>
+                    {industryName} businesses in Goa operate under conditions that do not
+                    map neatly onto national playbooks. Search demand is seasonal, a
+                    meaningful share of buyers are visitors rather than residents, and the
+                    decision window is often compressed into a few days.
+                  </p>
+                  <p>
+                    Sanctify approaches <strong>{keyword}</strong> by first establishing how
+                    your particular buyers search, what they compare, and where they drop
+                    out — then building the channel mix around that evidence rather than
+                    around channel fashion.
+                  </p>
+
+                  <h2>Where {industryName.toLowerCase()} campaigns usually leak</h2>
+                  <ul>
+                    <li><strong>Unclaimed local presence</strong> — incomplete Google Business Profile, inconsistent business details across directories, thin review volume.</li>
+                    <li><strong>Seasonal mistiming</strong> — budget spent evenly across the year instead of front-loading ahead of demand.</li>
+                    <li><strong>Weak enquiry paths</strong> — traffic arrives but the site gives no obvious next action.</li>
+                    <li><strong>No AI visibility</strong> — buyers increasingly ask AI assistants for recommendations, and most {industryName.toLowerCase()} businesses here are absent from those answers.</li>
+                    <li><strong>Vanity reporting</strong> — impressions and followers reported instead of enquiries and revenue.</li>
+                  </ul>
+
+                  <h2>How the engagement runs</h2>
+                  <p>
+                    Every {industryName.toLowerCase()} engagement opens with a documented
+                    audit and a 90-day roadmap. Execution is handled in-house across
+                    strategy, content, creative and technical build. You receive dashboard
+                    access plus a monthly review that reports against commercial outcomes,
+                    not activity volume.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Services for this sector */}
+              <Reveal>
+                <h2 className="type-heading text-ink mt-14 mb-6">
+                  Services we deploy for {industryName.toLowerCase()}
+                </h2>
+              </Reveal>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {services.map((s, i) => (
+                  <Reveal key={s.href} delay={i * 60}>
+                    <a href={s.href} className="group h-full block bg-white edge-soft rounded-2xl p-6 lift hover:border-ink/20">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="font-bold text-ink text-base">{s.label}</h3>
+                        <ArrowUpRight size={16} className="text-slate-light shrink-0 group-hover:text-electric transition-colors" />
+                      </div>
+                      <p className="mt-2 text-slate text-sm leading-relaxed">{s.d}</p>
+                    </a>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Outcomes */}
+              <Reveal>
+                <h2 className="type-heading text-ink mt-14 mb-6">What we report against</h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    "Qualified enquiries and their source",
+                    "Local map-pack position for priority queries",
+                    "Cost per enquiry across paid channels",
+                    "Share of AI answers mentioning your brand",
+                  ].map((m, i) => (
+                    <div key={m} className="flex items-start gap-3 bg-sand rounded-xl p-5">
+                      <span className="w-7 h-7 rounded-lg bg-ink text-acid grid place-items-center shrink-0">
+                        <TrendingUp size={14} />
+                      </span>
+                      <p className="text-ink/80 text-sm leading-relaxed font-medium">{m}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+
+              {/* Other sectors */}
+              <Reveal>
+                <div className="mt-14 pt-8 border-t border-ink/[0.09]">
+                  <p className="type-eyebrow text-slate-light mb-4">Other sectors we serve</p>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-px">
+                    {otherIndustries
+                      .filter((o) => o.slug !== industrySlug)
+                      .map((o) => (
+                        <a
+                          key={o.slug}
+                          href={`/digital-marketing-for-${o.slug}/`}
+                          className="group flex items-center justify-between py-2.5 border-b border-ink/[0.06] hover:border-ink/25 transition-colors"
+                        >
+                          <span className="text-[0.8125rem] text-ink/75 group-hover:text-ink">{o.name}</span>
+                          <ChevronRight size={13} className="text-slate-light group-hover:text-electric transition-colors" />
+                        </a>
+                      ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-4">
+              <div className="lg:sticky lg:top-28 space-y-4">
+                <div className="bg-ink rounded-2xl p-6 grain relative overflow-hidden">
+                  <div className="absolute inset-0 field-dots-light opacity-50" aria-hidden="true" />
+                  <div className="relative z-10">
+                    <p className="type-eyebrow text-acid">Sector audit</p>
+                    <p className="mt-2 font-bold text-white text-base leading-snug">
+                      Free {industryName.toLowerCase()} visibility check
+                    </p>
+                    <p className="mt-2 text-white/55 text-sm leading-relaxed">
+                      We benchmark you against the {industryName.toLowerCase()} businesses
+                      currently winning search in your area.
+                    </p>
+                    <a href="/contact/" className="mt-4 inline-flex items-center gap-2 bg-acid text-ink px-5 py-3 rounded-[6px] font-bold text-sm hover:bg-white transition-colors">
+                      Request audit <ArrowUpRight size={15} />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="bg-sand rounded-2xl p-6">
+                  <p className="type-eyebrow text-slate-light mb-3">Included as standard</p>
+                  <ul className="space-y-2.5">
+                    {["Documented audit", "90-day roadmap", "Named account manager", "Monthly review", "No lock-in contract"].map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-[0.8125rem] text-ink/80">
+                        <Check size={14} className="text-electric shrink-0 mt-0.5" strokeWidth={2.5} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose">
-          <h2>Digital Marketing Solutions for {industryName} in Goa</h2>
-          <p>The {industryName.toLowerCase()} industry in Goa has unique digital marketing needs. Generic strategies don&apos;t work — you need an agency that understands the {industryName.toLowerCase()} sector&apos;s specific challenges, customer journey, and competitive landscape. That&apos;s exactly what Sanctify delivers.</p>
-          <p>Since 2012, we&apos;ve helped numerous {industryName.toLowerCase()} businesses in Goa grow their online presence, generate qualified leads, and increase revenue through targeted <strong>{keyword}</strong> strategies.</p>
-
-          <h2>Our Services for {industryName} Businesses</h2>
-          <ul>
-            <li><strong>SEO for {industryName}</strong> — Rank for industry-specific keywords that your customers search for. Local SEO to dominate Google Maps.</li>
-            <li><strong>Social Media for {industryName}</strong> — Engaging content that resonates with your target audience. Platform-specific strategies.</li>
-            <li><strong>Google Ads for {industryName}</strong> — Targeted PPC campaigns that reach potential customers at the moment of intent.</li>
-            <li><strong>Website Design for {industryName}</strong> — Industry-optimized websites that convert visitors into customers/leads.</li>
-            <li><strong>Content Marketing for {industryName}</strong> — Authority-building content that educates, engages, and converts.</li>
-            <li><strong>Reputation Management</strong> — Review management, brand monitoring, and positive online presence building.</li>
-          </ul>
-
-          <h2>Why {industryName} Businesses in Goa Need Digital Marketing</h2>
-          <p>The {industryName.toLowerCase()} market in Goa is increasingly competitive. Whether your customers are locals, tourists, or businesses — they&apos;re searching online before making decisions. Here&apos;s why digital marketing is essential:</p>
-          <ul>
-            <li><strong>Visibility</strong> — Be found when potential customers search for {industryName.toLowerCase()} services in Goa</li>
-            <li><strong>Trust</strong> — Build credibility through reviews, content, and consistent online presence</li>
-            <li><strong>Lead Generation</strong> — Convert website visitors and social followers into paying customers</li>
-            <li><strong>Competitive Edge</strong> — Stay ahead of competitors who are already investing in digital</li>
-            <li><strong>Measurable ROI</strong> — Track every rupee spent and optimize for maximum returns</li>
-          </ul>
-
-          <h2>Results We&apos;ve Achieved for {industryName} Clients</h2>
-          <ul>
-            <li>✓ 150%+ average increase in organic traffic within 6 months</li>
-            <li>✓ 3X improvement in lead generation through targeted campaigns</li>
-            <li>✓ 40% reduction in cost-per-acquisition through optimized ads</li>
-            <li>✓ 200% increase in social media engagement and follower growth</li>
-            <li>✓ Top-3 local rankings for high-intent industry keywords</li>
-          </ul>
-
-          <h2>Our {industryName} Marketing Process</h2>
-          <ul>
-            <li><strong>Industry Research</strong> — Deep dive into {industryName.toLowerCase()} trends, competitors, and opportunities in Goa</li>
-            <li><strong>Customer Persona Mapping</strong> — Understanding your ideal customer&apos;s journey and touchpoints</li>
-            <li><strong>Channel Strategy</strong> — Selecting the right mix of SEO, social, paid, and content for your goals</li>
-            <li><strong>Campaign Execution</strong> — Professional implementation by industry-experienced team members</li>
-            <li><strong>Performance Optimization</strong> — Continuous A/B testing, bid management, and strategy refinement</li>
-            <li><strong>Monthly Reporting</strong> — Clear dashboards showing leads, conversions, and business impact</li>
-          </ul>
-
-          <h2>Get Started — Free {industryName} Marketing Consultation</h2>
-          <p>Book a free 30-minute consultation where we&apos;ll analyze your {industryName.toLowerCase()} business&apos;s digital presence and recommend a custom growth strategy. No obligations, no pushy sales — just expert advice.</p>
-          <ul>
-            <li>📞 <a href="tel:+919923352923">+91 9923352923</a></li>
-            <li>📧 <a href="mailto:help@sanctify.in">help@sanctify.in</a></li>
-            <li>🌐 <a href="/contact/">Request a callback →</a></li>
-          </ul>
-
-          <h2>Explore Our Full Service Range</h2>
-          <p>
-            <a href="/seo-services/">SEO Services</a> · <a href="/social-media-marketing/">Social Media Marketing</a> · <a href="/web-design/">Web Design</a> · <a href="/google-ads/">Google Ads</a> · <a href="/content-marketing/">Content Marketing</a> · <a href="/ai-marketing/">AI Marketing</a> · <a href="/pricing/">View Pricing</a>
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white">Grow Your {industryName} Business in Goa</h2>
-          <p className="mt-4 text-white/70 text-lg">Free consultation + custom strategy for your industry</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href="/contact/" className="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-white/90 transition-all">Book Free Consultation</a>
-            <a href="tel:+919923352923" className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">Call +91 9923352923</a>
-          </div>
-        </div>
-      </section>
+      <CTABanner />
     </>
   );
 }

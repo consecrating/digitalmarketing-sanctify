@@ -1,7 +1,7 @@
 const faqs = [
   {
     q: "What makes Sanctify the best digital marketing agency in Goa?",
-    a: "Three things: twelve years operating in this specific market, a fully in-house team across every discipline, and reporting tied to revenue rather than impressions. We have shipped 200+ projects for businesses in Panaji, Margao, Mapusa, Vasco and Calangute since 2012.",
+    a: "Three things: fourteen years operating in this specific market, a fully in-house team across every discipline, and reporting tied to revenue rather than impressions. We have shipped 200+ projects for businesses in Panaji, Margao, Mapusa, Vasco and Calangute since 2012.",
   },
   {
     q: "How much does digital marketing cost in Goa?",

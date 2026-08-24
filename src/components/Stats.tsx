@@ -1,5 +1,5 @@
 const stats = [
-  { value: "12+", label: "Years operating", detail: "Founded in South Goa, 2012" },
+  { value: "14+", label: "Years operating", detail: "Founded in South Goa, 2012" },
   { value: "200+", label: "Projects shipped", detail: "Across 10+ industries" },
   { value: "4.8", label: "Average rating", detail: "From 128 verified reviews" },
   { value: "+284%", label: "Median traffic lift", detail: "Within first 6 months" },

@@ -1,106 +1,281 @@
-"use client";
-import { ArrowRight, CheckCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Check, ChevronRight } from "lucide-react";
+import { PageHero, FactGrid } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
+import { CTABanner } from "@/components/CTABanner";
 
-interface Props {
+const locations = [
+  { slug: "panaji", name: "Panaji" }, { slug: "margao", name: "Margao" },
+  { slug: "mapusa", name: "Mapusa" }, { slug: "vasco", name: "Vasco da Gama" },
+  { slug: "calangute", name: "Calangute" }, { slug: "porvorim", name: "Porvorim" },
+  { slug: "ponda", name: "Ponda" }, { slug: "candolim", name: "Candolim" },
+  { slug: "anjuna", name: "Anjuna" }, { slug: "old-goa", name: "Old Goa" },
+];
+
+const industries = [
+  { slug: "hotels-resorts", name: "Hotels & Resorts" },
+  { slug: "restaurants-cafes", name: "Restaurants & Cafés" },
+  { slug: "real-estate", name: "Real Estate" },
+  { slug: "healthcare", name: "Healthcare" },
+  { slug: "tourism", name: "Tourism & Travel" },
+  { slug: "retail", name: "Retail & E-commerce" },
+  { slug: "education", name: "Education" },
+  { slug: "it-companies", name: "IT & Technology" },
+];
+
+const siblings = [
+  { href: "/seo-services/", label: "SEO Services" },
+  { href: "/social-media-marketing/", label: "Social Media Marketing" },
+  { href: "/web-design/", label: "Web Design" },
+  { href: "/google-ads/", label: "Google Ads & PPC" },
+  { href: "/content-marketing/", label: "Content Marketing" },
+  { href: "/ai-marketing/", label: "AI Marketing" },
+  { href: "/email-marketing/", label: "Email Marketing" },
+  { href: "/graphic-design/", label: "Graphic Design" },
+  { href: "/video-marketing/", label: "Video Marketing" },
+  { href: "/reputation-management/", label: "Reputation Management" },
+];
+
+const phases = [
+  { n: "01", t: "Audit", d: "Baseline your current position, technical health and competitor set before anything is committed." },
+  { n: "02", t: "Roadmap", d: "A prioritised 90-day plan with named deliverables and the return each is expected to produce." },
+  { n: "03", t: "Execution", d: "In-house delivery across strategy, creative and technical build. No outsourcing." },
+  { n: "04", t: "Compounding", d: "Weekly optimisation, monthly review, quarterly reset — so gains stack rather than reset." },
+];
+
+const toc = [
+  { id: "overview", label: "Overview" },
+  { id: "included", label: "What's included" },
+  { id: "approach", label: "Our approach" },
+  { id: "sectors", label: "Sectors served" },
+  { id: "areas", label: "Service areas" },
+  { id: "next", label: "Next steps" },
+];
+
+export function ServicePageTemplate({
+  title,
+  keyword,
+  description,
+  slug,
+}: {
   title: string;
   keyword: string;
   description: string;
   slug: string;
-}
-
-export function ServicePageTemplate({ title, keyword, description, slug }: Props) {
+}) {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 gradient-hero overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-white/50 text-sm">
-                <li><a href="/" className="hover:text-white">Home</a></li><li>/</li>
-                <li className="text-white/80">{title}</li>
+      <PageHero
+        eyebrow="Service"
+        title={title}
+        accent="in Goa"
+        lede={description}
+        crumbs={[{ href: "/", label: "Home" }, { label: title }]}
+        meta={
+          <FactGrid
+            items={[
+              { k: "Operating since", v: "2012 · 14+ years" },
+              { k: "Projects delivered", v: "200+" },
+              { k: "Client rating", v: "4.8 / 5" },
+              { k: "Retainers from", v: "₹15,000/mo" },
+            ]}
+          />
+        }
+      />
+
+      {/* Body */}
+      <section className="bg-paper py-16 md:py-20">
+        <div className="max-w-[88rem] mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            {/* TOC rail */}
+            <aside className="lg:col-span-3">
+              <div className="lg:sticky lg:top-28">
+                <p className="type-eyebrow text-slate-light pb-2.5 mb-3 border-b border-ink/[0.09]">
+                  On this page
+                </p>
+                <nav aria-label="On this page">
+                  <ul className="space-y-1">
+                    {toc.map((t) => (
+                      <li key={t.id}>
+                        <a href={`#${t.id}`} className="group flex items-center gap-2 py-1.5 text-[0.8125rem] text-slate hover:text-ink transition-colors">
+                          <span className="w-1 h-1 rounded-full bg-slate-light group-hover:bg-electric transition-colors" />
+                          {t.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+
+                <div className="mt-7 bg-sand rounded-xl p-5">
+                  <p className="font-bold text-ink text-sm">Free visibility audit</p>
+                  <p className="mt-1.5 text-slate text-xs leading-relaxed">
+                    We benchmark you against local competitors on Google and in AI answers.
+                  </p>
+                  <a href="/contact/" className="mt-3 inline-flex items-center gap-1.5 text-electric font-bold text-xs">
+                    Request it <ArrowUpRight size={13} />
+                  </a>
+                </div>
+              </div>
+            </aside>
+
+            {/* Content */}
+            <div className="lg:col-span-9">
+              <Reveal>
+                <div className="prose-editorial max-w-3xl">
+                  <h2 id="overview">Why {title.toLowerCase()} matters for businesses in Goa</h2>
+                  <p>
+                    Goa is a compact but unusually competitive market. Demand swings with
+                    the tourist calendar, buyers research on mobile, and a handful of
+                    well-optimised competitors capture a disproportionate share of
+                    attention. Businesses that treat <strong>{keyword}</strong> as an
+                    ongoing discipline rather than a one-off project are the ones that
+                    hold position through both peak and off-season.
+                  </p>
+                  <p>
+                    Sanctify has worked in this market since 2012 — more than fourteen
+                    years — across 200+ projects spanning hospitality, real estate,
+                    healthcare, education and retail. {description}
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* What's included */}
+              <Reveal>
+                <h2 id="included" className="type-heading text-ink mt-14 mb-6">
+                  What&apos;s included
+                </h2>
+              </Reveal>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { t: "Discovery & benchmarking", d: "Current-state analysis, competitor mapping, and a documented baseline you can measure against." },
+                  { t: "Strategy & prioritisation", d: "A written plan sequenced by expected impact, not by what is easiest to deliver." },
+                  { t: "Hands-on execution", d: "Delivered by the in-house specialists who built the plan — not passed to a third party." },
+                  { t: "Measurement & reporting", d: "Live dashboard access plus a monthly review in plain language, tied to commercial outcomes." },
+                ].map((b, i) => (
+                  <Reveal key={b.t} delay={i * 70}>
+                    <div className="h-full bg-white edge-soft rounded-2xl p-6 lift hover:border-ink/20">
+                      <span className="w-9 h-9 rounded-lg bg-electric-50 text-electric grid place-items-center mb-4">
+                        <Check size={16} strokeWidth={2.5} />
+                      </span>
+                      <h3 className="font-bold text-ink text-base">{b.t}</h3>
+                      <p className="mt-2 text-slate text-sm leading-relaxed">{b.d}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Approach */}
+              <Reveal>
+                <h2 id="approach" className="type-heading text-ink mt-14 mb-6">
+                  How we run the engagement
+                </h2>
+              </Reveal>
+
+              <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 list-none p-0">
+                {phases.map((p, i) => (
+                  <Reveal key={p.n} delay={i * 70}>
+                    <li className="h-full bg-sand rounded-2xl p-5">
+                      <span className="font-black text-2xl text-electric/25 leading-none">{p.n}</span>
+                      <h3 className="mt-3 font-bold text-ink text-sm">{p.t}</h3>
+                      <p className="mt-1.5 text-slate text-xs leading-relaxed">{p.d}</p>
+                    </li>
+                  </Reveal>
+                ))}
               </ol>
-            </nav>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
-              {title}<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-light to-secondary">in Goa</span>
-            </h1>
-            <p className="mt-6 text-white/65 text-lg md:text-xl leading-relaxed max-w-2xl">{description}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="/contact/" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-dark px-7 py-4 rounded-xl font-bold transition-all">
-                Get Free Consultation <ArrowRight size={18} />
-              </a>
-              <a href="tel:+919923352923" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-7 py-4 rounded-xl font-bold transition-all">
-                <Phone size={18} /> Call Now
-              </a>
+
+              {/* Sectors */}
+              <Reveal>
+                <h2 id="sectors" className="type-heading text-ink mt-14 mb-6">
+                  Sectors we deliver this for
+                </h2>
+              </Reveal>
+
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-px">
+                {industries.map((ind, i) => (
+                  <Reveal key={ind.slug} delay={i * 40}>
+                    <a
+                      href={`/digital-marketing-for-${ind.slug}/`}
+                      className="group flex items-center justify-between py-3 border-b border-ink/[0.07] hover:border-ink/25 transition-colors"
+                    >
+                      <span className="text-[0.9375rem] text-ink/80 group-hover:text-ink font-medium">{ind.name}</span>
+                      <ChevronRight size={15} className="text-slate-light group-hover:text-electric transition-colors" />
+                    </a>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Areas */}
+              <Reveal>
+                <h2 id="areas" className="type-heading text-ink mt-14 mb-5">
+                  Service areas across Goa
+                </h2>
+                <p className="text-slate text-[0.9375rem] leading-relaxed mb-5 max-w-2xl">
+                  We deliver {title.toLowerCase()} across the state. Pick your locality
+                  for details specific to that market.
+                </p>
+                <ul className="flex flex-wrap gap-2">
+                  {locations.map((l) => (
+                    <li key={l.slug}>
+                      <a
+                        href={`/${slug}-in-${l.slug}/`}
+                        className="inline-block text-[0.8125rem] font-medium text-ink/75 bg-white edge-soft px-3.5 py-2 rounded-full hover:bg-ink hover:text-white hover:border-ink transition-colors"
+                      >
+                        {l.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+
+              {/* Next */}
+              <Reveal>
+                <h2 id="next" className="type-heading text-ink mt-14 mb-5">
+                  Next steps
+                </h2>
+                <div className="bg-ink rounded-2xl p-7 md:p-8 grain relative overflow-hidden">
+                  <div className="absolute inset-0 field-dots-light opacity-50" aria-hidden="true" />
+                  <div className="relative z-10 md:flex items-center justify-between gap-8">
+                    <div>
+                      <p className="font-bold text-white text-lg">Start with the audit</p>
+                      <p className="mt-2 text-white/55 text-sm leading-relaxed max-w-md">
+                        No cost, no obligation. You receive a written summary of where
+                        you stand and the three changes we would prioritise first.
+                      </p>
+                    </div>
+                    <a
+                      href="/contact/"
+                      className="mt-5 md:mt-0 inline-flex items-center gap-2 bg-acid text-ink px-6 py-3.5 rounded-[6px] font-bold text-sm hover:bg-white transition-colors shrink-0"
+                    >
+                      Request audit <ArrowUpRight size={16} />
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Sibling services */}
+              <Reveal>
+                <div className="mt-14 pt-8 border-t border-ink/[0.09]">
+                  <p className="type-eyebrow text-slate-light mb-4">Other services</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {siblings.filter((s) => s.href !== `/${slug}/`).map((s) => (
+                      <li key={s.href}>
+                        <a
+                          href={s.href}
+                          className="inline-block text-[0.8125rem] text-slate bg-sand px-3.5 py-2 rounded-full hover:bg-electric hover:text-white transition-colors"
+                        >
+                          {s.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose">
-          <h2>Why Your Goa Business Needs Professional {title}</h2>
-          <p>In the competitive Goa market, businesses that invest in professional <strong>{keyword}</strong> services gain a significant advantage. With over 12 years of experience, Sanctify has helped 200+ businesses across Panaji, Margao, Mapusa, Vasco da Gama, and all of Goa achieve measurable growth through expert {title.toLowerCase()} strategies.</p>
-          <p>{description} Our data-driven approach ensures every rupee you invest generates measurable returns — no vanity metrics, only business growth.</p>
-
-          <h2>Our {title} Process</h2>
-          <ul>
-            <li><strong>Discovery & Audit</strong> — We analyze your current digital presence, competitor landscape, and market opportunities specific to Goa.</li>
-            <li><strong>Strategy Development</strong> — Custom strategy aligned with your business goals, budget, and target audience in Goa.</li>
-            <li><strong>Implementation</strong> — Expert execution by our in-house team of specialists — no outsourcing, no shortcuts.</li>
-            <li><strong>Monitoring & Optimization</strong> — Continuous performance tracking with weekly optimizations for maximum ROI.</li>
-            <li><strong>Reporting & Insights</strong> — Transparent monthly reports with clear KPIs, insights, and recommendations.</li>
-          </ul>
-
-          <h2>Why Choose Sanctify for {title} in Goa?</h2>
-          <p>Sanctify stands apart as Goa&apos;s most trusted <strong>{keyword}</strong> partner. Here&apos;s what makes us different:</p>
-          <ul>
-            <li>✓ <strong>12+ years of proven results</strong> in the Goa market since 2012</li>
-            <li>✓ <strong>200+ successful projects</strong> delivered across diverse industries</li>
-            <li>✓ <strong>In-house expert team</strong> — no freelancers, no outsourcing</li>
-            <li>✓ <strong>Data-driven approach</strong> with transparent monthly reporting</li>
-            <li>✓ <strong>Local expertise</strong> — we understand Goa&apos;s unique market dynamics</li>
-            <li>✓ <strong>AI-first methodology</strong> — leveraging latest technology for superior results</li>
-            <li>✓ <strong>No long-term contracts</strong> — our results speak for themselves</li>
-            <li>✓ <strong>Rated 4.8/5</strong> from 128+ client reviews</li>
-          </ul>
-
-          <h2>Industries We Serve with {title} in Goa</h2>
-          <p>Our {title.toLowerCase()} expertise spans across Goa&apos;s key sectors:</p>
-          <ul>
-            <li><strong>Hotels & Hospitality</strong> — <a href="/digital-marketing-for-hotels-resorts/">Hotel digital marketing →</a></li>
-            <li><strong>Restaurants & Cafes</strong> — <a href="/digital-marketing-for-restaurants-cafes/">Restaurant marketing →</a></li>
-            <li><strong>Real Estate</strong> — <a href="/digital-marketing-for-real-estate/">Real estate marketing →</a></li>
-            <li><strong>Healthcare</strong> — <a href="/digital-marketing-for-healthcare/">Healthcare marketing →</a></li>
-            <li><strong>Tourism & Travel</strong> — <a href="/digital-marketing-for-tourism/">Tourism marketing →</a></li>
-            <li><strong>Education</strong> — <a href="/digital-marketing-for-education/">Education marketing →</a></li>
-            <li><strong>Retail & E-commerce</strong> — <a href="/digital-marketing-for-retail/">Retail marketing →</a></li>
-          </ul>
-
-          <h2>Service Areas in Goa</h2>
-          <p>We provide {title.toLowerCase()} services across all of Goa including:</p>
-          <p><a href={`/${slug}-in-panaji/`}>Panaji</a> · <a href={`/${slug}-in-margao/`}>Margao</a> · <a href={`/${slug}-in-mapusa/`}>Mapusa</a> · <a href={`/${slug}-in-vasco/`}>Vasco</a> · <a href={`/${slug}-in-calangute/`}>Calangute</a> · <a href={`/${slug}-in-porvorim/`}>Porvorim</a> · <a href={`/${slug}-in-ponda/`}>Ponda</a> · <a href={`/${slug}-in-candolim/`}>Candolim</a> · <a href={`/${slug}-in-anjuna/`}>Anjuna</a> · <a href={`/${slug}-in-old-goa/`}>Old Goa</a></p>
-
-          <h2>Get Started with {title} Today</h2>
-          <p>Ready to grow your business with professional {title.toLowerCase()} in Goa? Contact Sanctify for a free consultation and custom strategy proposal. Call <a href="tel:+919923352923">+91 9923352923</a> or <a href="/contact/">fill our inquiry form</a>.</p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white">Ready to Grow with Expert {title}?</h2>
-          <p className="mt-4 text-white/70 text-lg">Get a free consultation and custom strategy for your Goa business</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href="/contact/" className="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-white/90 transition-all">Get Free Proposal</a>
-            <a href="tel:+919923352923" className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">Call +91 9923352923</a>
-          </div>
-        </div>
-      </section>
+      <CTABanner />
     </>
   );
 }

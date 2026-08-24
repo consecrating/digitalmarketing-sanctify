@@ -37,7 +37,7 @@ export function WhyUs() {
                 </div>
                 <p className="mt-4 text-slate text-sm leading-relaxed">
                   &ldquo;Do great work, stay transparent, treat every client&apos;s growth
-                  as your own. That hasn&apos;t changed in twelve years.&rdquo;
+                  as your own. That hasn&apos;t changed in fourteen years.&rdquo;
                 </p>
               </div>
 

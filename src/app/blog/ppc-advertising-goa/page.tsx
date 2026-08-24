@@ -3,7 +3,7 @@ import { BlogPostTemplate } from "@/components/BlogPostTemplate";
 
 export const metadata: Metadata = {
   title: "PPC Advertising for Goa Businesses — Maximize Your ROI",
-  description: "Learn about PPC advertising Goa. Expert insights from Sanctify — Goa's leading digital marketing agency with 12+ years of experience.",
+  description: "Learn about PPC advertising Goa. Expert insights from Sanctify — Goa's leading digital marketing agency with 14+ years of experience.",
   alternates: { canonical: "https://www.digitalmarketing.sanctify.in/blog/ppc-advertising-goa/" },
 };
 
