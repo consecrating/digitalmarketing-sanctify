@@ -48,14 +48,14 @@ const offices = [
 
 function Avatar({ photo, name }: { photo: string; name: string }) {
   return (
-    <span className="block w-full aspect-square rounded-xl overflow-hidden bg-sand-dark">
+    <span className="block w-full aspect-[4/5] rounded-xl overflow-hidden bg-sand-dark">
       <img
         src={photo}
         alt={`Portrait of ${name}`}
-        width={320}
-        height={320}
+        width={560}
+        height={700}
         loading="lazy"
-        className="w-full h-full object-cover zoom-img"
+        className="w-full h-full object-cover object-center zoom-img"
       />
     </span>
   );
